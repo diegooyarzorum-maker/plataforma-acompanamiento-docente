@@ -1,15 +1,71 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Panel docente | Acompañamiento Docente</title><link rel="stylesheet" href="css/style.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel docente | Acompañamiento Docente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body class="app-page">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="app-header"><a class="brand" href="index.html"><span class="brand-mark">AD</span><span>Acompañamiento Docente</span></a><nav aria-label="Sesión demostrativa"><span class="demo-badge">Vista docente</span><a href="login.html">Salir</a></nav></header>
+  <header class="app-header">
+    <a class="brand" href="index.html" aria-label="Acompañamiento Docente, ir al inicio"><span class="brand-mark" aria-hidden="true">AD</span><span>Acompañamiento Docente</span></a>
+    <nav aria-label="Navegación principal"><span class="demo-badge">Vista demostrativa</span><a href="evaluacion-docente.html">Evaluación</a><a href="ecep.html">ECEP</a><a href="index.html">Inicio</a></nav>
+  </header>
   <main id="contenido" class="dashboard-shell">
-    <section class="dashboard-welcome"><div><p class="eyebrow">Panel docente</p><h1>Tu ruta de acompañamiento</h1><p>Retoma tus actividades y revisa tus próximos pasos.</p></div><div class="progress-ring" aria-label="Progreso total: 35 por ciento"><strong>35%</strong><span>avance total</span></div></section>
+    <section class="dashboard-welcome" aria-labelledby="titulo-panel">
+      <div><p class="eyebrow">Panel docente</p><h1 id="titulo-panel">Hola, Carolina</h1><p>Continúa tu ruta de acompañamiento y revisa los próximos pasos de esta semana.</p></div>
+      <div class="progress-ring progress-ring-62" role="img" aria-label="Avance general: 62 por ciento"><strong>62%</strong><span>avance general</span></div>
+    </section>
+    <p class="prototype-note dashboard-note"><strong>Datos de demostración:</strong> la información de este panel es ficticia y no corresponde a una persona real.</p>
+
     <section class="dashboard-grid" aria-label="Áreas de trabajo">
-      <article class="dashboard-card"><span class="card-label blue">Evaluación Docente</span><h2>Fortalece tus evidencias</h2><p>Revisa orientaciones y organiza el trabajo pendiente.</p><div class="mini-progress"><span style="width:42%"></span></div><div class="card-meta"><span>42% completado</span><a href="evaluacion-docente.html">Continuar →</a></div></article>
-      <article class="dashboard-card"><span class="card-label green">Preparación ECEP</span><h2>Continúa tu estudio</h2><p>Avanza en contenidos y actividades de práctica.</p><div class="mini-progress green"><span style="width:28%"></span></div><div class="card-meta"><span>28% completado</span><a href="ecep.html">Estudiar →</a></div></article>
-      <aside class="next-steps"><h2>Próximos pasos</h2><ul><li><span>1</span><div><strong>Revisar orientaciones</strong><small>Evaluación Docente</small></div></li><li><span>2</span><div><strong>Estudiar dominio seleccionado</strong><small>Preparación ECEP</small></div></li><li><span>3</span><div><strong>Registrar avance semanal</strong><small>Seguimiento</small></div></li></ul></aside>
+      <article class="dashboard-card process-card">
+        <div class="card-heading"><span class="card-label blue">Evaluación Docente</span><span class="status-chip status-active">En desarrollo</span></div>
+        <h2>Fortalece tus evidencias</h2>
+        <p class="process-detail"><strong>Próximo paso:</strong> revisar la coherencia entre los indicadores y el objetivo de aprendizaje.</p>
+        <div class="progress-label"><span>Avance del proceso</span><strong>68%</strong></div>
+        <div class="mini-progress" role="progressbar" aria-label="Avance de Evaluación Docente" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span style="width:68%"></span></div>
+        <a class="button card-button" href="evaluacion-docente.html">Continuar proceso</a>
+      </article>
+
+      <article class="dashboard-card process-card">
+        <div class="card-heading"><span class="card-label green">Preparación ECEP</span><span class="status-chip status-practice">En práctica</span></div>
+        <h2>Continúa tu estudio</h2>
+        <dl class="process-facts"><div><dt>Último resultado</dt><dd>7 de 10 respuestas correctas</dd></div><div><dt>Área a reforzar</dt><dd>Conocimientos pedagógicos</dd></div></dl>
+        <div class="progress-label"><span>Progreso de estudio</span><strong>48%</strong></div>
+        <div class="mini-progress green" role="progressbar" aria-label="Progreso de Preparación ECEP" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><span style="width:48%"></span></div>
+        <a class="button card-button green-button" href="ecep.html">Continuar estudiando</a>
+      </article>
+
+      <section class="next-steps" aria-labelledby="titulo-tareas">
+        <div class="section-title-row"><div><p class="eyebrow">Organiza tu semana</p><h2 id="titulo-tareas">Próximas tareas</h2></div><span class="task-count">3 pendientes</span></div>
+        <ul class="task-list">
+          <li><span class="task-icon" aria-hidden="true">01</span><div class="task-content"><strong>Revisar indicadores de evaluación</strong><small>Evaluación Docente</small></div><div class="task-meta"><span class="status-chip status-active">En curso</span><time datetime="2026-08-28">28 ago.</time></div><a class="task-link" href="evaluacion-docente.html" aria-label="Ir a revisar indicadores de evaluación">Abrir <span aria-hidden="true">→</span></a></li>
+          <li><span class="task-icon" aria-hidden="true">02</span><div class="task-content"><strong>Completar miniensayo ECEP</strong><small>Preparación ECEP</small></div><div class="task-meta"><span class="status-chip status-priority">Prioridad alta</span><time datetime="2026-08-30">30 ago.</time></div><a class="task-link" href="ecep.html" aria-label="Ir a completar miniensayo ECEP">Abrir <span aria-hidden="true">→</span></a></li>
+          <li><span class="task-icon" aria-hidden="true">03</span><div class="task-content"><strong>Leer retroalimentación del asesor</strong><small>Seguimiento</small></div><div class="task-meta"><span class="status-chip status-new">Nueva</span><span>Esta semana</span></div><a class="task-link" href="#retroalimentacion" aria-label="Ir a la retroalimentación reciente">Revisar <span aria-hidden="true">↓</span></a></li>
+        </ul>
+      </section>
+
+      <article id="retroalimentacion" class="feedback-card" aria-labelledby="titulo-retroalimentacion">
+        <div class="section-title-row"><div><p class="eyebrow">Acompañamiento</p><h2 id="titulo-retroalimentacion">Retroalimentación reciente</h2></div><time class="date-chip" datetime="2026-08-24">24 de agosto</time></div>
+        <p class="feedback-area"><strong>Área:</strong> Planificación y evaluación</p>
+        <div class="feedback-grid">
+          <section class="feedback-point strength" aria-labelledby="fortaleza-titulo"><span aria-hidden="true">✓</span><div><h3 id="fortaleza-titulo">Fortaleza</h3><p>El objetivo de aprendizaje está formulado con claridad y orienta adecuadamente la actividad.</p></div></section>
+          <section class="feedback-point improvement" aria-labelledby="mejora-titulo"><span aria-hidden="true">↗</span><div><h3 id="mejora-titulo">Aspecto por mejorar</h3><p>Revisa la coherencia entre el objetivo, los indicadores y la evidencia que recogerás.</p></div></section>
+        </div>
+        <a class="button button-secondary feedback-button" href="#historial-retroalimentaciones">Ver retroalimentaciones</a>
+        <p id="historial-retroalimentaciones" class="sr-only" tabindex="-1">El historial completo estará disponible próximamente en esta versión demostrativa.</p>
+      </article>
+
+      <section class="progress-summary" aria-labelledby="titulo-resumen">
+        <div class="section-title-row"><div><p class="eyebrow">Vista general</p><h2 id="titulo-resumen">Resumen de progreso</h2></div></div>
+        <div class="summary-grid">
+          <article><div class="summary-value"><strong>68%</strong><span class="summary-dot blue-dot" aria-hidden="true"></span></div><h3>Evaluación Docente</h3><div class="mini-progress" aria-hidden="true"><span style="width:68%"></span></div><a href="evaluacion-docente.html">Ver proceso <span aria-hidden="true">→</span></a></article>
+          <article><div class="summary-value"><strong>48%</strong><span class="summary-dot green-dot" aria-hidden="true"></span></div><h3>Preparación ECEP</h3><div class="mini-progress green" aria-hidden="true"><span style="width:48%"></span></div><a href="ecep.html">Ver preparación <span aria-hidden="true">→</span></a></article>
+          <article><div class="summary-value"><strong>4/7</strong><span class="summary-dot gold-dot" aria-hidden="true"></span></div><h3>Tareas completadas</h3><div class="mini-progress gold" aria-hidden="true"><span style="width:57%"></span></div><span class="summary-caption">3 tareas pendientes</span></article>
+        </div>
+      </section>
     </section>
   </main>
   <script src="js/app.js"></script>
