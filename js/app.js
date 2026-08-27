@@ -273,6 +273,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Aplicación','¿Qué pista preserva mejor el razonamiento del estudiante?',['Entregar el primer paso completo.','Preguntar “¿qué necesitas averiguar primero y por qué?”.','Resolver el ejemplo.','Señalar la respuesta.'],1],
     ['Aplicación','Un estudiante ya ejecuta una estrategia con precisión. ¿Qué sigue?',['Mantener todas las ayudas.','Reducir apoyos y comprobar uso autónomo en tareas variadas.','Cambiar inmediatamente el objetivo.','Evitar nuevos contextos.'],1],
     ['Decisión pedagógica','¿Cómo elegir el nivel de ayuda?',['Por diagnóstico.','Usar la mínima ayuda efectiva, observar respuesta y ajustarla.','Aplicar el máximo apoyo.','Dar la misma pista a todos.'],1]
+  ], practiceFeedback: [
+    ['Comprensión conceptual','¿Qué caracteriza la práctica distribuida?',['Muchas repeticiones seguidas.','Oportunidades breves separadas en el tiempo con recuperación del aprendizaje.','Una evaluación final.','Tareas sin retroalimentación.'],1],
+    ['Comprensión conceptual','¿Qué hace accionable una retroalimentación?',['Incluye una calificación.','Vincula evidencia y criterio con una acción para el siguiente intento.','Corrige todos los errores.','Se entrega al final del semestre.'],1],
+    ['Interpretación','Resuelve veinte ejercicios iguales, pero falla cuando cambia el formato. ¿Qué falta?',['Más repetición idéntica.','Variación, discriminación de condiciones y transferencia.','Una nota.','Menos ejemplos.'],1],
+    ['Interpretación','Recibe un texto marcado y lo archiva sin revisar. ¿Cuál es el problema?',['Poca corrección.','La retroalimentación no genera una acción ni un nuevo intento.','Demasiada autonomía.','Falta una rúbrica numérica.'],1],
+    ['Aplicación','¿Cómo promover recuperación activa?',['Releer la explicación.','Pedir recordar y aplicar la estrategia antes de consultar el apoyo.','Copiar el ejemplo.','Mostrar la respuesta.'],1],
+    ['Aplicación','¿Qué retroalimentación es más útil?',['Muy bien.','Tu representación es correcta; revisa la incógnita y vuelve a elegir la operación.','Incorrecto.','Debes concentrarte.'],1],
+    ['Aplicación','¿Cómo enseñar autorregulación?',['Pedir independencia inmediata.','Modelar metas, autoindicaciones y comprobación, guiarlas y retirar ayudas.','Entregar una pauta permanente.','Evitar errores.'],1],
+    ['Decisión pedagógica','¿Qué diseño favorece transferencia?',['Ejercicios idénticos agrupados.','Práctica distribuida y acumulativa con ejemplos variados, explicación y retroalimentación.','Solo evaluación final.','Repetición sin contraste.'],1]
   ], assessmentIntegration: [
     ['Comprensión conceptual','¿Qué hace integral a una evaluación?',['La cantidad de pruebas.','La articulación de fuentes, contextos y participantes para orientar apoyos.','La existencia de un diagnóstico.','El uso exclusivo de instrumentos formales.'],1,'Unidad 1'],
     ['Interpretación','Una familia describe fortalezas no observadas en la escuela. ¿Cómo se usa esa información?',['Se descarta.','Se integra y contrasta con otras fuentes y condiciones.','Reemplaza toda evaluación.','Solo confirma diagnósticos.'],1,'Unidad 1'],
