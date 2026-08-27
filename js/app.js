@@ -309,6 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Aplicación','¿Qué indicador permite observar participación significativa?',['Solo asistencia.','Frecuencia y calidad de aportes, interacción, elección y progreso en el propósito compartido.','Cantidad de fichas.','Tiempo fuera del aula.'],1],
     ['Aplicación','Un apoyo individual mejora precisión, pero separa sistemáticamente al estudiante. ¿Qué se debe analizar?',['Solo la precisión.','Su efecto conjunto en aprendizaje, participación, autonomía y pertenencia.','Solo la preferencia adulta.','La duración del diagnóstico.'],1],
     ['Decisión pedagógica','¿Qué secuencia favorece una decisión inclusiva?',['Asignar un rol y observar asistencia.','Escuchar al estudiante, observar barreras y facilitadores, acordar un ajuste y monitorear participación, aprendizaje y pertenencia.','Aplicar el mismo apoyo por diagnóstico.','Priorizar siempre el trabajo separado.'],1]
+  ], coTeaching: [
+    ['Comprensión conceptual','¿Qué define la coenseñanza?',['Dos adultos presentes.','Responsabilidad compartida en planificación, enseñanza, evaluación y ajuste.','Un especialista que atiende diagnósticos.','Dividir el curso.'],1],
+    ['Comprensión conceptual','¿Cómo se selecciona una modalidad?',['Por costumbre.','Según objetivo, barreras y evidencia requerida.','Por diagnóstico.','Usando siempre estaciones.'],1],
+    ['Interpretación','Un docente dirige siempre y otro apoya al mismo subgrupo. ¿Qué riesgo existe?',['Liderazgo compartido.','Roles jerárquicos, estigma y responsabilidad fragmentada.','Exceso de modalidades.','Falta de pruebas.'],1],
+    ['Interpretación','Ambos conducen explicaciones conectadas. ¿Qué modalidad es?',['Separada.','En equipo.','Individual.','Derivación.'],1],
+    ['Aplicación','¿Cómo aumentar oportunidades de respuesta sobre el mismo objetivo?',['Un grupo observa.','Enseñanza paralela con grupos flexibles y criterios comunes.','Separar por diagnóstico.','Tareas no relacionadas.'],1],
+    ['Aplicación','¿Cómo usar uno enseña y otro observa?',['Observar cualquier cosa.','Acordar indicadores, registrar y analizar para ajustar.','Mantener roles siempre.','Mirar solo conducta.'],1],
+    ['Aplicación','Las estaciones no producen evidencia comparable. ¿Qué falta?',['Más materiales.','Propósito articulado, tareas coherentes e indicadores.','Más tiempo.','Grupos fijos.'],1],
+    ['Decisión pedagógica','¿Qué secuencia expresa colaboración?',['Dividir estudiantes.','Co-planificar objetivo, roles y evidencia; coenseñar; analizar y ajustar juntos.','Improvisar.','Delegar al especialista.'],1]
   ], assessmentIntegration: [
     ['Comprensión conceptual','¿Qué hace integral a una evaluación?',['La cantidad de pruebas.','La articulación de fuentes, contextos y participantes para orientar apoyos.','La existencia de un diagnóstico.','El uso exclusivo de instrumentos formales.'],1,'Unidad 1'],
     ['Interpretación','Una familia describe fortalezas no observadas en la escuela. ¿Cómo se usa esa información?',['Se descarta.','Se integra y contrasta con otras fuentes y condiciones.','Reemplaza toda evaluación.','Solo confirma diagnósticos.'],1,'Unidad 1'],
