@@ -318,6 +318,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Aplicación','¿Cómo usar uno enseña y otro observa?',['Observar cualquier cosa.','Acordar indicadores, registrar y analizar para ajustar.','Mantener roles siempre.','Mirar solo conducta.'],1],
     ['Aplicación','Las estaciones no producen evidencia comparable. ¿Qué falta?',['Más materiales.','Propósito articulado, tareas coherentes e indicadores.','Más tiempo.','Grupos fijos.'],1],
     ['Decisión pedagógica','¿Qué secuencia expresa colaboración?',['Dividir estudiantes.','Co-planificar objetivo, roles y evidencia; coenseñar; analizar y ajustar juntos.','Improvisar.','Delegar al especialista.'],1]
+  ], inclusiveClimate: [
+    ['Comprensión conceptual','¿Qué caracteriza una convivencia inclusiva?',['Ausencia de conflictos.','Participación, cuidado, derechos y respuesta formativa a las barreras.','Sanciones idénticas.','Apoyos separados.'],1],
+    ['Comprensión conceptual','¿Qué es estigmatización?',['Un apoyo pertinente.','Atribuir una marca desvalorizante que reduce identidad y participación.','Una norma común.','Una evaluación.'],1],
+    ['Interpretación','Un estudiante deja de usar un apoyo por burlas. ¿Qué evidencia muestra?',['El apoyo era innecesario.','Una barrera relacional que afecta acceso y pertenencia.','Falta de esfuerzo.','Autonomía.'],1],
+    ['Interpretación','Se sanciona una burla, pero continúa la exposición pública del apoyo. ¿Qué falta?',['Otra nota.','Modificar la condición que sostiene el estigma.','Retirar el apoyo.','Cambiar el objetivo.'],1],
+    ['Aplicación','Dos estudiantes siempre quedan fuera al formar equipos. ¿Qué corresponde?',['Esperar elección espontánea.','Rediseñar agrupamiento, roles e indicadores de participación.','Trabajar solos.','Sancionar al curso sin diálogo.'],1],
+    ['Aplicación','¿Qué respuesta protege a quien sufrió discriminación?',['Pedirle mediar inmediatamente.','Escuchar sin culpabilizar, detener el daño y acordar resguardos.','Exponer el caso públicamente.','Minimizarlo.'],1],
+    ['Aplicación','¿Cómo evaluar un cambio de convivencia?',['Solo contar sanciones.','Combinar recurrencia, percepción de seguridad, participación y observación.','Medir asistencia.','Preguntar solo al adulto.'],1],
+    ['Decisión pedagógica','¿Qué secuencia es más completa?',['Sancionar y cerrar.','Proteger, escuchar, analizar barreras, actuar formativamente y monitorear.','Retirar a quien fue afectado.','Aplicar la misma medida siempre.'],1]
   ], assessmentIntegration: [
     ['Comprensión conceptual','¿Qué hace integral a una evaluación?',['La cantidad de pruebas.','La articulación de fuentes, contextos y participantes para orientar apoyos.','La existencia de un diagnóstico.','El uso exclusivo de instrumentos formales.'],1,'Unidad 1'],
     ['Interpretación','Una familia describe fortalezas no observadas en la escuela. ¿Cómo se usa esa información?',['Se descarta.','Se integra y contrasta con otras fuentes y condiciones.','Reemplaza toda evaluación.','Solo confirma diagnósticos.'],1,'Unidad 1'],
