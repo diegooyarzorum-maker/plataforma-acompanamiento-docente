@@ -327,6 +327,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Aplicación','¿Qué respuesta protege a quien sufrió discriminación?',['Pedirle mediar inmediatamente.','Escuchar sin culpabilizar, detener el daño y acordar resguardos.','Exponer el caso públicamente.','Minimizarlo.'],1],
     ['Aplicación','¿Cómo evaluar un cambio de convivencia?',['Solo contar sanciones.','Combinar recurrencia, percepción de seguridad, participación y observación.','Medir asistencia.','Preguntar solo al adulto.'],1],
     ['Decisión pedagógica','¿Qué secuencia es más completa?',['Sancionar y cerrar.','Proteger, escuchar, analizar barreras, actuar formativamente y monitorear.','Retirar a quien fue afectado.','Aplicar la misma medida siempre.'],1]
+  ], interdisciplinaryFollowup: [
+    ['Comprensión conceptual','¿Qué caracteriza el seguimiento interdisciplinario?',['Acumular informes.','Integrar evidencia y acciones complementarias en una decisión común.','Delegar a un especialista.','Reunirse sin indicadores.'],1],
+    ['Comprensión conceptual','¿Qué distingue impacto de actividad?',['La frecuencia.','El cambio observable en desempeño, participación o autonomía.','La duración de reunión.','El número de profesionales.'],1],
+    ['Interpretación','Se registran sesiones, pero no cambios. ¿Qué falta?',['Más sesiones.','Indicadores de resultado bajo condiciones comparables.','Otro diagnóstico.','Un informe extenso.'],1],
+    ['Interpretación','Dos fuentes muestran desempeños distintos. ¿Qué corresponde?',['Elegir la menor.','Analizar tareas, contextos y apoyos antes de concluir.','Promediar sin contexto.','Descartar una fuente.'],1],
+    ['Aplicación','¿Qué completa un acuerdo monitoreable?',['Solo objetivo general.','Acción, responsable, contexto, indicador y fecha de revisión.','Diagnóstico y firma.','Lista de reuniones.'],1],
+    ['Aplicación','Un apoyo mejora precisión, pero no autonomía. ¿Qué procede?',['Mantenerlo igual.','Rediseñar ayudas y monitorear retiro gradual.','Eliminar el objetivo.','Aumentar dependencia.'],1],
+    ['Aplicación','Cada profesional trabaja una meta distinta. ¿Qué debe hacer el equipo?',['Mantener planes paralelos.','Priorizar una necesidad y articular aportes complementarios.','Elegir una profesión.','Agregar tareas.'],1],
+    ['Decisión pedagógica','¿Qué ciclo es más riguroso?',['Informar y archivar.','Triangular, priorizar, acordar, implementar, monitorear y ajustar.','Derivar y esperar.','Mantener apoyos por costumbre.'],1]
   ], assessmentIntegration: [
     ['Comprensión conceptual','¿Qué hace integral a una evaluación?',['La cantidad de pruebas.','La articulación de fuentes, contextos y participantes para orientar apoyos.','La existencia de un diagnóstico.','El uso exclusivo de instrumentos formales.'],1,'Unidad 1'],
     ['Interpretación','Una familia describe fortalezas no observadas en la escuela. ¿Cómo se usa esa información?',['Se descarta.','Se integra y contrasta con otras fuentes y condiciones.','Reemplaza toda evaluación.','Solo confirma diagnósticos.'],1,'Unidad 1'],
