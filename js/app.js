@@ -353,16 +353,32 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Interpretación','La familia solo firma un plan ya decidido. ¿Qué falta?',['Otro formulario.','Participación auténtica.','Más tecnicismos.','Una prueba médica.'],1,'Unidad 5'],
     ['Aplicación','¿Cómo comunicar información sensible?',['Compartir todo con todo el personal.','Usar lenguaje comprensible y entregar por canales resguardados solo lo pertinente a cada rol.','Grupo abierto de mensajería.','Omitir apoyos.'],1,'Unidad 5']
   ]};
-  const tagged=(key,module,indexes)=>indexes.map(i=>questionSets[key][i]).map(q=>[q[0],q[1],q[2],q[3],module]);
-  questionSets.module5Integration=[...tagged('diversifiedDesign','Unidad 1',[0,2,7]),...tagged('explicitTeaching','Unidad 2',[0,4,7]),...tagged('practiceFeedback','Unidad 3',[2,4,7]),...tagged('accessSupports','Unidad 4',[0,4,7]),...tagged('diversifiedAssessment','Unidad 5',[2,4,7])];
-  questionSets.module6Integration=[...tagged('participationBelonging','Unidad 1',[0,2,7]),...tagged('coTeaching','Unidad 2',[0,4,7]),...tagged('collaboration','Unidad 3',[2,4,7]),...tagged('inclusiveClimate','Unidad 4',[0,4,7]),...tagged('interdisciplinaryFollowup','Unidad 5',[2,4,7])];
-  questionSets.transversalQuick=[...tagged('bio','Módulo 1',[0,7]),...tagged('assessment','Módulo 2',[2]),...tagged('readingProcesses','Módulo 3',[4]),...tagged('mathProcesses','Módulo 4',[2]),...tagged('diversifiedDesign','Módulo 5',[4]),...tagged('participationBelonging','Módulo 6',[2,7])];
-  questionSets.transversalMini=[...tagged('bio','Módulo 1',[0,2,4]),...tagged('assessment','Módulo 2',[0,4,7]),...tagged('readingProcesses','Módulo 3',[2,4,7]),...tagged('mathProcesses','Módulo 4',[0,2,4]),...tagged('diversifiedDesign','Módulo 5',[0,4,7]),...tagged('participationBelonging','Módulo 6',[2,4,7])];
-  questionSets.transversalFull=[...tagged('bio','Módulo 1',[0,1,2,4,7]),...tagged('assessment','Módulo 2',[0,1,2,4,7]),...tagged('readingProcesses','Módulo 3',[0,1,2,4,7]),...tagged('mathProcesses','Módulo 4',[0,1,2,4,7]),...tagged('diversifiedDesign','Módulo 5',[0,1,2,4,7]),...tagged('participationBelonging','Módulo 6',[0,1,2,4,7])];
+  const moduleBanks=[
+    ['bio','evolution','inclusion','regulations','decree83'],
+    ['assessment','psychoeducational','deaIdentification','supportPlanning','collaboration'],
+    ['readingProcesses','decodingFluency','readingComprehension','writingProduction','literacyIntervention'],
+    ['mathProcesses','numberSense','calculationOperations','problemSolving','mathIntervention'],
+    ['diversifiedDesign','explicitTeaching','practiceFeedback','accessSupports','diversifiedAssessment'],
+    ['participationBelonging','coTeaching','collaboration','inclusiveClimate','interdisciplinaryFollowup']
+  ];
+  const integrationKeys={integration:0,assessmentIntegration:1,literacyIntegration:2,mathIntegration:3,module5Integration:4,module6Integration:5};
+  const shuffle=items=>{const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;};
+  const tagged=(questions,label)=>questions.map(q=>[q[0],q[1],q[2],q[3],label]);
+  const integrationBank=moduleIndex=>moduleBanks[moduleIndex].flatMap((key,unitIndex)=>tagged(shuffle(questionSets[key]).slice(0,3),`Unidad ${unitIndex+1}`));
+  const transversalBank=counts=>moduleBanks.flatMap((keys,moduleIndex)=>tagged(shuffle(keys.flatMap(key=>questionSets[key])).slice(0,counts[moduleIndex]),`Módulo ${moduleIndex+1}`));
+  const dynamicQuestions=key=>{
+    if(key in integrationKeys)return integrationBank(integrationKeys[key]);
+    if(key==='transversalQuick')return transversalBank([2,1,1,1,1,2]);
+    if(key==='transversalMini')return transversalBank([3,3,3,3,3,3]);
+    if(key==='transversalFull')return transversalBank([5,5,5,5,5,5]);
+    return questionSets[key];
+  };
   if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · selección transversal'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo'],completo:['transversalFull','Ensayo completo','30 preguntas · 5 por módulo']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · selección transversal'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.title=`${config[1]} | ECEP`;}
-  const questions = questionSets[quiz.dataset.quiz || 'bio'];
+  const quizKey=quiz.dataset.quiz||'bio';
+  let questions=[];
   const letters=['A','B','C','D'];
-  quiz.innerHTML=questions.map((x,i)=>`<fieldset class="quiz-question"><legend><span>${i+1} de ${questions.length} · ${x[0]}${x[4] ? ` · ${x[4]}` : ''}</span>${x[1]}</legend>${x[2].map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"><span><strong>${letters[j]}</strong>${o}</span></label>`).join('')}</fieldset>`).join('')+'<p class="quiz-error" role="alert" tabindex="-1" hidden>Responde todas las preguntas antes de finalizar.</p><button class="button green-button quiz-submit">Ver mi resultado</button>';
+  const renderQuiz=()=>{questions=shuffle(dynamicQuestions(quizKey)).map(q=>{const indexed=q[2].map((option,index)=>({option,correct:index===q[3]}));const options=shuffle(indexed);return [q[0],q[1],options.map(x=>x.option),options.findIndex(x=>x.correct),q[4]];});quiz.innerHTML=questions.map((x,i)=>`<fieldset class="quiz-question"><legend><span>${i+1} de ${questions.length} · ${x[0]}${x[4] ? ` · ${x[4]}` : ''}</span>${x[1]}</legend>${x[2].map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"><span><strong>${letters[j]}</strong>${o}</span></label>`).join('')}</fieldset>`).join('')+'<p class="quiz-error" role="alert" tabindex="-1" hidden>Responde todas las preguntas antes de finalizar.</p><button class="button green-button quiz-submit">Ver mi resultado</button>';};
+  renderQuiz();
   quiz.addEventListener('submit',(event)=>{event.preventDefault();const data=new FormData(quiz);if(questions.some((_,i)=>!data.has(`q${i}`))){const e=quiz.querySelector('.quiz-error');e.hidden=false;e.focus();return;}let total=0;const stats={},units={};questions.forEach((x,i)=>{const ok=Number(data.get(`q${i}`))===x[3];total+=ok;stats[x[0]]??={correct:0,total:0};stats[x[0]].total++;stats[x[0]].correct+=ok;if(x[4]){units[x[4]]??={correct:0,total:0};units[x[4]].total++;units[x[4]].correct+=ok;}});const sorted=Object.entries(stats).sort((a,b)=>b[1].correct/b[1].total-a[1].correct/a[1].total);document.querySelector('#result-percent').textContent=`${Math.round(total/questions.length*100)}%`;document.querySelector('#result-score').textContent=`${total} de ${questions.length}`;document.querySelector('#result-strength').textContent=sorted[0][0].toLowerCase();document.querySelector('#result-improve').textContent=sorted.at(-1)[0].toLowerCase();const bars=(source)=>Object.entries(source).map(([n,v])=>{const p=Math.round(v.correct/v.total*100);return `<article><div><strong>${n}</strong><span>${v.correct}/${v.total} · ${p}%</span></div><div class="mini-progress green" role="progressbar" aria-label="${n}: ${p} por ciento"><span style="width:${p}%"></span></div></article>`}).join('');document.querySelector('#skill-breakdown').innerHTML=bars(stats);const unitBreakdown=document.querySelector('#unit-breakdown');if(unitBreakdown)unitBreakdown.innerHTML=bars(units);const result=document.querySelector('#resultado');result.hidden=false;result.scrollIntoView({behavior:'smooth'});result.querySelector('h2').focus({preventScroll:true});});
-  document.querySelector('#retry-quiz').addEventListener('click',()=>{quiz.reset();document.querySelector('#resultado').hidden=true;quiz.querySelector('.quiz-error').hidden=true;document.querySelector('#practica').scrollIntoView({behavior:'smooth'});});
+  document.querySelector('#retry-quiz').addEventListener('click',()=>{document.querySelector('#resultado').hidden=true;renderQuiz();document.querySelector('#practica,#miniensayo')?.scrollIntoView({behavior:'smooth'});quiz.querySelector('legend')?.setAttribute('tabindex','-1');quiz.querySelector('legend')?.focus({preventScroll:true});});
 });
