@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evaluación del piloto | Preparación ECEP</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-page ecep-page">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="app-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">AD</span><span>Acompañamiento Docente</span></a><nav><span class="demo-badge">Evaluación anónima</span><a href="ecep-piloto.html">Volver al piloto</a></nav></header>
+<main id="contenido" class="content-shell pilot-shell">
+<nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="ecep.html">ECEP</a><span>/</span><a href="ecep-piloto.html">Piloto</a><span>/</span><span>Evaluación</span></nav>
+<header class="pilot-form-title"><p class="eyebrow">Pauta de evaluación</p><h1>Cuéntanos cómo fue la experiencia</h1><p>Responde desde tu experiencia profesional. No incluyas nombres ni situaciones que permitan identificar estudiantes.</p><p class="pilot-identity">Código anónimo: <strong data-pilot-code>Generando…</strong></p></header>
+<form class="pilot-form" data-pilot-form>
+<fieldset><legend>1. Perfil general</legend><label>Experiencia en Educación Especial<select name="experiencia" required><option value="">Selecciona una opción</option><option>En formación o menos de 2 años</option><option>Entre 2 y 5 años</option><option>Entre 6 y 10 años</option><option>Más de 10 años</option></select></label><label>Conocimiento previo de la ECEP<select name="conocimiento" required><option value="">Selecciona una opción</option><option>Es mi primer acercamiento</option><option>Conozco su estructura general</option><option>He estudiado instrumentos anteriores</option><option>La he rendido anteriormente</option></select></label></fieldset>
+<fieldset><legend>2. Evalúa la experiencia</legend><p class="field-help">1 significa “muy bajo” y 5 significa “muy alto”.</p>
+<div class="rating-row"><span>Claridad del contenido</span><div role="radiogroup" aria-label="Claridad del contenido"> <label><input type="radio" name="claridad" value="1" required>1</label><label><input type="radio" name="claridad" value="2">2</label><label><input type="radio" name="claridad" value="3">3</label><label><input type="radio" name="claridad" value="4">4</label><label><input type="radio" name="claridad" value="5">5</label></div></div>
+<div class="rating-row"><span>Facilidad de navegación</span><div role="radiogroup" aria-label="Facilidad de navegación"><label><input type="radio" name="navegacion" value="1" required>1</label><label><input type="radio" name="navegacion" value="2">2</label><label><input type="radio" name="navegacion" value="3">3</label><label><input type="radio" name="navegacion" value="4">4</label><label><input type="radio" name="navegacion" value="5">5</label></div></div>
+<div class="rating-row"><span>Utilidad para preparar la ECEP</span><div role="radiogroup" aria-label="Utilidad para preparar la ECEP"><label><input type="radio" name="utilidad" value="1" required>1</label><label><input type="radio" name="utilidad" value="2">2</label><label><input type="radio" name="utilidad" value="3">3</label><label><input type="radio" name="utilidad" value="4">4</label><label><input type="radio" name="utilidad" value="5">5</label></div></div>
+<div class="rating-row"><span>Pertinencia de las preguntas</span><div role="radiogroup" aria-label="Pertinencia de las preguntas"><label><input type="radio" name="preguntas" value="1" required>1</label><label><input type="radio" name="preguntas" value="2">2</label><label><input type="radio" name="preguntas" value="3">3</label><label><input type="radio" name="preguntas" value="4">4</label><label><input type="radio" name="preguntas" value="5">5</label></div></div>
+<div class="rating-row"><span>Utilidad del resultado y desglose</span><div role="radiogroup" aria-label="Utilidad del resultado y desglose"><label><input type="radio" name="resultado" value="1" required>1</label><label><input type="radio" name="resultado" value="2">2</label><label><input type="radio" name="resultado" value="3">3</label><label><input type="radio" name="resultado" value="4">4</label><label><input type="radio" name="resultado" value="5">5</label></div></div>
+</fieldset>
+<fieldset><legend>3. Observaciones</legend><label>¿Qué fue lo más útil?<textarea name="mas_util" rows="4" maxlength="700" required></textarea></label><label>¿Qué fue difícil, confuso o mejorable?<textarea name="mejorar" rows="4" maxlength="700" required></textarea></label><label>¿Qué función o contenido agregarías?<textarea name="agregaria" rows="4" maxlength="700"></textarea></label><label>Tiempo aproximado utilizado<select name="tiempo" required><option value="">Selecciona una opción</option><option>Menos de 30 minutos</option><option>Entre 30 y 45 minutos</option><option>Entre 46 y 60 minutos</option><option>Más de 60 minutos</option></select></label></fieldset>
+<button class="button green-button" type="submit">Generar resumen anónimo</button>
+</form>
+<section class="pilot-summary" data-pilot-summary hidden aria-labelledby="resumen-titulo"><p class="eyebrow">Listo para compartir</p><h2 id="resumen-titulo" tabindex="-1">Resumen de tu evaluación</h2><p>Revisa el texto, cópialo y envíalo por el canal acordado con quien coordina el piloto.</p><textarea data-pilot-output rows="18" readonly aria-label="Resumen de respuestas"></textarea><div class="result-actions"><button class="button green-button" type="button" data-copy-pilot>Copiar respuestas</button><a class="button button-secondary" href="ecep.html">Volver a ECEP</a></div><p class="inline-feedback" data-copy-status role="status"></p></section>
+</main>
+<footer class="site-footer"><p>Evaluación del piloto ECEP</p><p>Sin envío automático de información</p></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
