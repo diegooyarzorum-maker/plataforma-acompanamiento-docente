@@ -373,14 +373,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const tagged=(questions,label)=>questions.map(q=>[q[0],q[1],q[2],q[3],label]);
   const integrationBank=moduleIndex=>moduleBanks[moduleIndex].flatMap((key,unitIndex)=>tagged(shuffle(questionSets[key]).slice(0,3),`Unidad ${unitIndex+1}`));
   const transversalBank=counts=>moduleBanks.flatMap((keys,moduleIndex)=>tagged(shuffle(keys.flatMap(key=>questionSets[key])).slice(0,counts[moduleIndex]),`Módulo ${moduleIndex+1}`));
+  const fullExamPatterns=[
+    ['Comprensión conceptual','Aplicación'],
+    ['Interpretación','Aplicación'],
+    ['Comprensión conceptual','Decisión pedagógica'],
+    ['Interpretación','Aplicación'],
+    ['Aplicación','Decisión pedagógica']
+  ];
+  const fullExamBank=()=>moduleBanks.flatMap((keys,moduleIndex)=>{
+    const patterns=shuffle(fullExamPatterns);
+    return keys.flatMap((key,unitIndex)=>patterns[unitIndex].map(skill=>{
+      const candidates=questionSets[key].filter(question=>question[0]===skill);
+      const selected=shuffle(candidates)[0];
+      return [selected[0],selected[1],selected[2],selected[3],`Módulo ${moduleIndex+1}`];
+    }));
+  });
   const dynamicQuestions=key=>{
     if(key in integrationKeys)return integrationBank(integrationKeys[key]);
     if(key==='transversalQuick')return transversalBank([2,1,1,1,1,2]);
     if(key==='transversalMini')return transversalBank([3,3,3,3,3,3]);
-    if(key==='transversalFull')return transversalBank([5,5,5,5,5,5]);
+    if(key==='transversalFull')return fullExamBank();
     return questionSets[key];
   };
-  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · selección transversal'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo'],completo:['transversalFull','Ensayo completo','30 preguntas · 5 por módulo']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · selección transversal'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.title=`${config[1]} | ECEP`;}
+  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · selección transversal'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · tiempo sugerido: 120 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · selección transversal'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
   const quizKey=quiz.dataset.quiz||'bio';
   let questions=[];
   const letters=['A','B','C','D'];
