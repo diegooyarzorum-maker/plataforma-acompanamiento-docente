@@ -52,3 +52,46 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 /* Piloto docente */
 .pilot-invite,.pilot-hero{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:48px 0;padding:30px;background:var(--blue-pale);border:1px solid #c9e0e8;border-radius:var(--radius)}.pilot-invite h2,.pilot-hero h1,.pilot-form-title h1{margin:.1rem 0;color:var(--navy);font-family:Georgia,"Times New Roman",serif}.pilot-invite p,.pilot-hero p,.pilot-form-title p{margin:.45rem 0;color:var(--muted)}.pilot-code{min-width:230px;padding:20px;background:#fff;border-radius:14px}.pilot-code span,.pilot-code strong,.pilot-code small{display:block}.pilot-code strong{margin:.35rem 0;color:var(--green);font-size:1.5rem;letter-spacing:.05em}.pilot-code small{color:var(--muted)}.pilot-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}.pilot-info-grid article{padding:24px;background:#fff;border:1px solid var(--line);border-radius:14px}.pilot-info-grid article>span{font-size:1.4rem;color:var(--blue)}.pilot-info-grid h2{margin:.6rem 0 .2rem;color:var(--navy);font-size:1.1rem}.pilot-info-grid p{margin:0;color:var(--muted)}.pilot-route{margin:48px 0}.pilot-route ol{padding:0;list-style:none}.pilot-route li{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}.pilot-route li>span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}.pilot-route strong{color:var(--navy)}.pilot-route p{margin:.2rem 0;color:var(--muted)}.pilot-form-title{max-width:760px;margin:30px 0}.pilot-identity{display:inline-block;padding:.45rem .8rem;background:var(--green-pale);border-radius:9px}.pilot-form{display:grid;gap:22px}.pilot-form fieldset{display:grid;gap:18px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:16px}.pilot-form legend{padding:0 .5rem;color:var(--navy);font-weight:800}.pilot-form label>select,.pilot-form label>textarea{display:block;width:100%;margin-top:.4rem;padding:.8rem;border:1px solid #aebfc5;border-radius:9px;background:#fff;color:var(--ink);font:inherit}.pilot-form textarea{resize:vertical}.field-help{margin:0;color:var(--muted)}.rating-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}.rating-row>span{font-weight:700}.rating-row>div{display:flex;gap:8px}.rating-row label{display:flex;align-items:center;gap:4px;padding:.45rem}.pilot-form select:focus-visible,.pilot-form textarea:focus-visible,.rating-row input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.pilot-summary{margin-top:35px;padding:28px;background:var(--green-pale);border-radius:16px}.pilot-summary textarea{width:100%;padding:14px;border:1px solid #91b9ab;border-radius:10px;background:#fff;font:inherit}.pilot-summary h2{color:var(--navy)}
 @media(max-width:750px){.pilot-invite,.pilot-hero{align-items:flex-start;flex-direction:column}.pilot-code{width:100%}.pilot-info-grid{grid-template-columns:1fr}.pilot-route li{grid-template-columns:42px 1fr}.pilot-route li .button{grid-column:2;justify-self:start}.rating-row{align-items:flex-start;grid-template-columns:1fr}.rating-row>div{flex-wrap:wrap}}
+
+/* Portada ECEP: jerarquía orientada a la siguiente acción */
+.next-action-card{position:relative;padding:28px;background:#fff;border:1px solid #cfe2dc;border-radius:18px;box-shadow:0 12px 32px rgba(22,59,79,.07)}
+.next-action-card h2{max-width:360px;margin:1rem 0 .45rem;color:var(--navy);font-size:1.35rem;line-height:1.25}
+.next-action-card p{margin:.3rem 0;color:var(--muted)}
+.next-action-card .button{margin-top:1.25rem}
+.next-action-number{position:absolute;right:22px;top:10px;color:rgba(23,59,79,.07)!important;font:700 3.2rem Georgia,serif}
+.next-action-meta{display:flex;justify-content:space-between;gap:16px;margin-top:.55rem;color:var(--muted);font-size:.78rem}
+.ecep-route-guide{display:grid;grid-template-columns:.55fr 1.45fr;gap:35px;align-items:center;margin:36px 0;padding:28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.ecep-route-guide h2{margin:.15rem 0;color:var(--navy);font:clamp(1.55rem,2.5vw,2.15rem)/1.15 Georgia,serif}
+.ecep-route-guide ol{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.ecep-route-guide li{display:flex;gap:10px;min-width:0}
+.ecep-route-guide li>span{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800}
+.ecep-route-guide strong,.ecep-route-guide small{display:block}
+.ecep-route-guide small{margin-top:.2rem;color:var(--muted);line-height:1.35}
+.practice-options article{position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.practice-options article>p{min-height:52px}
+.practice-options .button{margin-top:auto}
+.practice-meta{margin:0 0 1.2rem;padding:0;list-style:none;color:var(--muted);font-size:.82rem}
+.practice-meta li{margin:.25rem 0}
+.practice-meta li::before{content:'✓';margin-right:.5rem;color:var(--green);font-weight:900}
+.practice-options .featured-practice{border:2px solid #89c2ae;background:linear-gradient(145deg,#fff,#edf7f3)}
+.featured-label{position:absolute;right:18px;top:18px;padding:.25rem .55rem;border-radius:99px;background:var(--green-pale);color:var(--green);font-size:.7rem;font-weight:800}
+.secondary-actions{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.secondary-actions .recommend-card,.secondary-actions .pilot-invite{height:100%;margin:0}
+.secondary-actions .recommend-card{grid-template-columns:auto 1fr;padding:25px}
+.secondary-actions .recommend-card .button{grid-column:2;justify-self:start}
+.secondary-actions .pilot-invite{align-items:flex-start;flex-direction:column;background:#fff}
+
+@media(max-width:950px){
+.ecep-route-guide{grid-template-columns:1fr}
+.ecep-route-guide ol{grid-template-columns:1fr 1fr}
+.secondary-actions{grid-template-columns:1fr}
+}
+@media(max-width:580px){
+.ecep-route-guide{padding:22px}
+.ecep-route-guide ol{grid-template-columns:1fr}
+.next-action-card{padding:22px}
+.next-action-number{font-size:2.5rem}
+.featured-label{position:static;margin-bottom:.5rem}
+.secondary-actions .recommend-card{grid-template-columns:1fr}
+.secondary-actions .recommend-card .button{grid-column:auto}
+}
