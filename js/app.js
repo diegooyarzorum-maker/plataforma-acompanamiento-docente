@@ -950,6 +950,109 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','Dos indicadores entregan conclusiones opuestas. ¿Qué corresponde?',['Elegir el más favorable.','Examinar qué mide cada uno, su comparabilidad y evidencia cualitativa antes de ajustar.','Promediarlos sin análisis.','Descartar ambos.'],1]
   ]};
   Object.entries(module4Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module4CaseContexts={mathProcesses:[
+    'En una situación de compra, Camila calcula correctamente la operación escrita, pero no explica qué representa el resultado ni comprueba si responde la pregunta.',
+    'Tomás resuelve restas simbólicas, pero ante “había 35 y se retiraron 8” suma ambos números sin construir una representación de la situación.',
+    'El equipo quiere distinguir si el error se origina en la comprensión de cantidad, la notación, el procedimiento o la demanda verbal de la tarea.',
+    'Una estudiante utiliza bloques para mostrar 52, pero afirma que 52 es menor que 48 porque compara solamente los dígitos finales.',
+    'Después de obtener 91 para 48 + 32, el estudiante no estima ni representa decenas y unidades, aunque conoce los pasos del algoritmo.',
+    'En el curso aparecen respuestas incorrectas diferentes; el registro disponible consigna solo acierto o error y no conserva procedimientos ni ayudas.',
+    'Valentina compara dos colecciones correctamente con bloques, pero invierte el signo cuando registra la relación mediante símbolos.',
+    'Ignacio ejecuta operaciones dadas con precisión, pero no selecciona una operación cuando debe modelar una situación nueva.',
+    'Durante la entrevista, el profesional necesita una pregunta que revele representación, relaciones y justificación, no solo el resultado final.',
+    'Para aislar una dificultad notacional, se dispone de objetos, dibujos, lenguaje oral y símbolos que expresan la misma relación matemática.',
+    'Al ver números grandes, un estudiante responde al azar y evita calcular, aunque con referentes de magnitud puede formular estimaciones razonables.',
+    'Dos procedimientos llegan al mismo resultado; el equipo requiere registrar representación, pasos, explicación, errores y nivel de ayuda.',
+    'Una alumna aplica de memoria un algoritmo y obtiene la respuesta correcta, pero no logra representar ni justificar por qué funciona.',
+    'La mayoría falla una tarea presentada mediante un diagrama que nunca fue enseñado, pese a resolver la misma relación en formatos conocidos.',
+    'Dos estudiantes fallan una resta: uno no comprende la relación de quitar y otro comprende, pero se equivoca al reagrupar.',
+    'El material concreto mejora el resultado, pero al pasar directamente a símbolos el estudiante pierde la relación entre las cantidades.'
+  ],numberSense:[
+    'Martina recita la secuencia numérica, pero al contar una colección señala dos veces un objeto y omite otro sin advertirlo.',
+    'Benjamín forma 52 con bloques, aunque afirma que es menor que 48 porque observa solamente que 2 es menor que 8.',
+    'Para construir equivalencias, el estudiante manipula unidades y decenas, pero todavía registra cada representación como una cantidad distinta.',
+    'Al comparar 507 y 57, Javiera se fija únicamente en el dígito 7 y no considera la posición de mayor valor.',
+    'La docente muestra brevemente una colección organizada y pide explicar qué grupos permitieron reconocer el total sin contar uno a uno.',
+    'Una estudiante usa material con autonomía para representar cantidades, pero falla cuando debe pasar de inmediato a notación simbólica.',
+    'Durante el conteo, un niño recita bien la serie, pero asigna más de una palabra numérica a algunos objetos y deja otros sin señalar.',
+    'Ante 398 en una recta de 0 a 500, una estudiante lo ubica cerca de 300 y no usa 400 como referente próximo.',
+    'El curso repite que diez unidades forman una decena, pero no logra agrupar, desagrupar ni registrar esa equivalencia.',
+    'Al comparar 507 y 57, el estudiante necesita justificar desde centenas, decenas y unidades en lugar de memorizar cuál es mayor.',
+    'Se busca desarrollar reconocimiento rápido de cantidades organizadas sin convertir la actividad en memorización visual de una sola imagen.',
+    'Para trabajar 100, la planificación contempla una única representación con diez decenas y no explora otras descomposiciones equivalentes.',
+    'En una recta vacía, el estudiante coloca números sin explicar los referentes, las distancias ni la magnitud relativa.',
+    'El material permite responder, pero no existe una secuencia hacia dibujos, lenguaje numérico y símbolos con retiro gradual.',
+    'Tras enseñanza explícita, persiste la confusión del cero en números como 304 y 340 bajo distintas representaciones.',
+    'Un puntaje total bajo reúne errores de conteo, comparación, valor posicional y escritura de numerales con patrones distintos.'
+  ],calculationOperations:[
+    'Para resolver 8 + 7, Alonso cuenta ambas colecciones desde uno, llega al resultado correcto y demora considerablemente.',
+    'Fernanda calcula 36 × 4 como 30 × 4 más 6 × 4 y explica que ambas partes conservan el valor del número original.',
+    'El estudiante conoce 10 + 6, pero ante 9 + 7 vuelve a contar desde uno y no utiliza compensación ni relaciones conocidas.',
+    'En 45 + 7, una alumna escribe el 7 bajo las decenas; con bloques diferencia unidades y decenas correctamente.',
+    'Para resolver 24 ÷ 6, el estudiante aplica pasos escritos, pero no representa reparto, agrupamiento ni relación con multiplicación.',
+    'Los errores aumentan solo cuando las operaciones requieren reagrupar, mientras los hechos básicos y sumas sin reagrupación son precisos.',
+    'Ante 7 + 8, un alumno cuenta todos los elementos desde uno; la estrategia funciona, pero demanda mucha atención y tiempo.',
+    'Una estudiante descompone 36 × 4 en productos parciales equivalentes y luego suma los resultados con precisión.',
+    'El equipo quiere conectar 9 + 7 con un referente conocido sin exigir memorización aislada ni conteo completo.',
+    'Al sumar 45 + 7, el error aparece al alinear cifras, aunque la estudiante representa correctamente 4 decenas y 12 unidades.',
+    'El símbolo 24 ÷ 6 se ejecuta mecánicamente; se busca construir su significado mediante grupos iguales y relaciones inversas.',
+    'Una alumna obtiene un resultado imposible con el algoritmo, pero no estima ni utiliza la operación inversa para comprobarlo.',
+    'La práctica diaria usa listas extensas y cronómetro, pero no conecta hechos con dobles, familias ni propiedades.',
+    'Las equivocaciones se concentran en los pasos de reagrupación y en la equivalencia entre una decena y diez unidades.',
+    'Un estudiante utiliza una estrategia mental distinta del algoritmo enseñado, obtiene resultados correctos y puede justificar cada transformación.',
+    'Después de muchas fichas idénticas, la precisión no mejora y se repiten sustituciones, errores posicionales y pasos omitidos.'
+  ],problemSolving:[
+    'Ante un problema que incluye la palabra “más”, Sebastián suma automáticamente, aunque la pregunta solicita determinar la cantidad inicial.',
+    'Daniela representa correctamente la relación, selecciona la operación pertinente y luego comete un error aritmético en el cálculo final.',
+    'En un problema de comparación, el estudiante identifica dos cantidades, pero no representa la diferencia ni cuál valor es desconocido.',
+    'El enunciado incluye edad, precio y cantidad; solo algunos datos se relacionan con la pregunta que debe responderse.',
+    'Antes de calcular, el alumno empieza a operar con todos los números sin anticipar representación, procedimiento ni resultado aproximado.',
+    'La mayoría del curso falla una pregunta cuyo enunciado admite dos interpretaciones y contiene información contradictoria.',
+    'Al leer “tenía algunas y recibió 7”, un estudiante suma por la palabra “recibió”, aunque se pregunta cuánto tenía al comienzo.',
+    'La estudiante construye un diagrama adecuado y elige la operación correcta, pero se equivoca en un hecho numérico durante la ejecución.',
+    'Para enseñar comparación, se consideran dibujos que muestren ambas cantidades, la diferencia y la ubicación de la incógnita.',
+    'Un problema contiene un dato atractivo pero irrelevante; el estudiante selecciona todos los números sin relacionarlos con la pregunta.',
+    'La planificación busca que el alumno represente y estime antes de ejecutar operaciones, conservando la responsabilidad por la solución.',
+    'El estudiante comprende el problema cuando se lo leen, pero el acceso al texto escrito interfiere con su razonamiento matemático.',
+    'Se practican enunciados con las mismas palabras clave, aunque las estructuras matemáticas y contextos cambian superficialmente.',
+    'El enunciado utilizado por todo el curso es ambiguo y no permite establecer con claridad una única relación matemática.',
+    'Un alumno espera que el adulto nombre la operación antes de comenzar y no explica las relaciones entre los datos.',
+    'La estudiante resuelve correctamente con diagrama, cálculo mental y ecuación, y puede comparar la eficiencia de cada estrategia.'
+  ],mathIntervention:[
+    'Después de varias sesiones, el estudiante mejora en los ejercicios practicados, pero no reconoce la misma relación en dibujos o problemas nuevos.',
+    'El promedio semanal permanece estable, aunque disminuyen errores posicionales y ahora aparecen equivocaciones menores de cálculo.',
+    'La planificación indica “comprender números”, sin criterio observable, representaciones esperadas, plazo ni condición de ayuda.',
+    'Para monitorear cálculo, cada semana se aplican tareas de dificultad distinta y se registra solamente el tiempo total.',
+    'El material concreto facilita respuestas, pero el adulto indica siempre qué recurso usar y cada paso que debe seguirse.',
+    'No hay progreso pese a una intervención aplicada con frecuencia, duración, procedimiento y tareas alineadas al objetivo.',
+    'El estudiante resuelve los ejercicios practicados, pero no identifica la misma relación cuando cambia la representación o el contexto.',
+    'El puntaje total no cambia; sin embargo, desaparecen errores de valor posicional y surgen errores de cálculo más específicos.',
+    'El equipo necesita transformar “comprender números de tres cifras” en un desempeño comparable y temporalizado.',
+    'Para observar estrategias, se comparan tareas equivalentes y se registran precisión, procedimiento, explicación y nivel de ayuda.',
+    'El apoyo concreto produce respuestas correctas, pero también dependencia de indicaciones y poca elección autónoma de representaciones.',
+    'Docente y especialista utilizan lenguaje, representaciones e indicadores distintos para trabajar el mismo objetivo.',
+    'La intervención se aplicó una vez por semana, aunque el plan establecía tres; además hubo suspensiones no registradas.',
+    'Durante varias mediciones, el desempeño es estable, autónomo y se transfiere a tareas habituales del aula.',
+    'Con alta fidelidad, dosis suficiente y tareas bien alineadas, no se observa cambio en el proceso priorizado.',
+    'Un indicador muestra progreso y otro retroceso, pero evalúan demandas, formatos y niveles de ayuda diferentes.'
+  ]};
+  const module4ComplexityLayer={
+    mathProcesses:{'Interpretación':'Debe localizarse el quiebre entre concepto, representación, lenguaje, notación y procedimiento.','Aplicación':'La evidencia debe hacer visible el razonamiento y mantener comparable la relación matemática evaluada.','Decisión pedagógica':'La respuesta se diferencia según el patrón y se comprueba con representaciones y tareas nuevas.'},
+    numberSense:{'Interpretación':'El análisis requiere separar recitado, conteo, cardinalidad, magnitud, valor posicional y notación.','Aplicación':'El apoyo debe conectar cantidad, material, dibujo, lenguaje y símbolo sin fijar dependencia de una modalidad.','Decisión pedagógica':'La progresión conserva el concepto y construye puentes explícitos hacia representaciones más abstractas.'},
+    calculationOperations:{'Interpretación':'Una respuesta correcta o incorrecta debe interpretarse desde la estrategia, eficiencia y comprensión de relaciones.','Aplicación':'La enseñanza conecta propiedades, valor posicional, estimación y comprobación con práctica variada.','Decisión pedagógica':'El apoyo se focaliza en el error observado y reconoce procedimientos alternativos matemáticamente válidos.'},
+    problemSolving:{'Interpretación':'Debe distinguirse modelación, selección de datos, elección de operación, ejecución y comprobación.','Aplicación':'El apoyo facilita el acceso al enunciado sin entregar la relación ni sustituir el razonamiento.','Decisión pedagógica':'Antes de atribuir dificultad individual se revisan la calidad de la tarea y las oportunidades de enseñanza.'},
+    mathIntervention:{'Interpretación':'El progreso incluye cambios cualitativos, transferencia y autonomía, no solo promedio o ejercicios practicados.','Aplicación':'La intervención vincula línea base, objetivo focalizado, dosis, fidelidad e indicadores comparables.','Decisión pedagógica':'La evidencia permite retirar, intensificar o modificar apoyos después de revisar implementación y método.'}
+  };
+  Object.entries(module4CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module4ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+    });
+  });
   const module5Expansions={diversifiedDesign:[
     ['Comprensión conceptual','¿Qué significa anticipar barreras en la planificación?',['Esperar a que un estudiante fracase.','Examinar previamente demandas, contextos y posibles obstáculos para ofrecer alternativas pertinentes.','Crear una tarea distinta para cada diagnóstico.','Reducir todos los objetivos.'],1],
     ['Comprensión conceptual','¿Qué debe permanecer estable al diversificar una actividad?',['El formato de respuesta.','El propósito de aprendizaje y los criterios centrales que se evaluarán.','El tiempo exacto para todos.','El recurso tecnológico.'],1],
