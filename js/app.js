@@ -894,7 +894,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitPracticeDistribution={'Comprensión conceptual':2,'Interpretación':2,'Aplicación':3,'Decisión pedagógica':1};
   const unitPracticeBank=key=>Object.entries(unitPracticeDistribution).flatMap(([skill,count])=>shuffle(questionSets[key].filter(question=>question[0]===skill)).slice(0,count));
   const integrationBank=moduleIndex=>moduleBanks[moduleIndex].flatMap((key,unitIndex)=>tagged(shuffle(questionSets[key]).slice(0,3),`Unidad ${unitIndex+1}`));
-  const transversalBank=counts=>moduleBanks.flatMap((keys,moduleIndex)=>tagged(shuffle(keys.flatMap(key=>questionSets[key])).slice(0,counts[moduleIndex]),`Módulo ${moduleIndex+1}`));
+  const questionWords=question=>question[1].trim().split(/\s+/).length;
+  const variedCandidate=(candidates,preferUpper=false)=>{
+    const ordered=shuffle(candidates).sort((a,b)=>questionWords(a)-questionWords(b));
+    const midpoint=Math.max(1,Math.ceil(ordered.length/2));
+    const range=preferUpper?ordered.slice(midpoint):ordered.slice(0,midpoint);
+    return shuffle(range.length?range:ordered)[0];
+  };
+  const taggedQuestion=(question,moduleIndex)=>[question[0],question[1],question[2],question[3],`Módulo ${moduleIndex+1}`];
+  const quickSkillPattern=['Comprensión conceptual','Interpretación','Interpretación','Aplicación','Aplicación','Aplicación','Aplicación','Decisión pedagógica'];
+  const quickBank=()=>{
+    const modules=shuffle([0,1,2,3,4,5]);
+    const moduleSequence=[...modules,...shuffle(modules).slice(0,2)];
+    const used=new Set();
+    return shuffle(quickSkillPattern).map((skill,index)=>{
+      const moduleIndex=moduleSequence[index];
+      const candidates=moduleBanks[moduleIndex].flatMap(key=>questionSets[key]).filter(question=>question[0]===skill&&!used.has(question[1]));
+      const selected=variedCandidate(candidates,index%2===1);
+      used.add(selected[1]);
+      return taggedQuestion(selected,moduleIndex);
+    });
+  };
+  const miniSkillPatterns=[
+    ['Comprensión conceptual','Interpretación','Aplicación'],
+    ['Interpretación','Aplicación','Decisión pedagógica'],
+    ['Comprensión conceptual','Aplicación','Decisión pedagógica']
+  ];
+  const miniBank=()=>moduleBanks.flatMap((keys,moduleIndex)=>{
+    const units=shuffle(keys);
+    return miniSkillPatterns[moduleIndex%miniSkillPatterns.length].map((skill,index)=>{
+      const candidates=questionSets[units[index]].filter(question=>question[0]===skill);
+      return taggedQuestion(variedCandidate(candidates,index%2===1),moduleIndex);
+    });
+  });
   const fullExamPatterns=[
     ['Comprensión conceptual','Aplicación'],
     ['Interpretación','Aplicación'],
@@ -904,21 +936,20 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const fullExamBank=()=>moduleBanks.flatMap((keys,moduleIndex)=>{
     const patterns=shuffle(fullExamPatterns);
-    return keys.flatMap((key,unitIndex)=>patterns[unitIndex].map(skill=>{
+    return keys.flatMap((key,unitIndex)=>patterns[unitIndex].map((skill,skillIndex)=>{
       const candidates=questionSets[key].filter(question=>question[0]===skill);
-      const selected=shuffle(candidates)[0];
-      return [selected[0],selected[1],selected[2],selected[3],`Módulo ${moduleIndex+1}`];
+      return taggedQuestion(variedCandidate(candidates,(unitIndex+skillIndex)%2===1),moduleIndex);
     }));
   });
   const dynamicQuestions=key=>{
     if(key in integrationKeys)return integrationBank(integrationKeys[key]);
-    if(key==='transversalQuick')return transversalBank([2,1,1,1,1,2]);
-    if(key==='transversalMini')return transversalBank([3,3,3,3,3,3]);
+    if(key==='transversalQuick')return quickBank();
+    if(key==='transversalMini')return miniBank();
     if(key==='transversalFull')return fullExamBank();
     if(unitPracticeKeys.has(key))return unitPracticeBank(key);
     return questionSets[key];
   };
-  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · selección transversal'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · tiempo sugerido: 120 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · selección transversal'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
+  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo · casos variados'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · matriz equilibrada · tiempo sugerido: 120 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
   const quizKey=quiz.dataset.quiz||'bio';
   let questions=[];
   const letters=['A','B','C','D'];
