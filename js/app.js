@@ -624,6 +624,95 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','La familia no acepta una medida que el equipo considera útil. ¿Cuál es el siguiente paso?',['Aplicarla sin informar.','Comprender sus razones, explicar evidencia y alternativas, y acordar una prueba monitoreada cuando sea posible.','Cerrar el caso.','Retirar todos los apoyos.'],1]
   ]};
   Object.entries(module2Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module2CaseContexts={assessment:[
+    'El equipo dispone de resultados de pruebas, producciones de aula y entrevistas, pero el informe resume únicamente los puntajes más bajos.',
+    'La familia relata que Martín organiza compras y calcula vueltos, aunque en la prueba escrita de matemática dejó varios ejercicios sin responder.',
+    'Durante dos semanas, Antonia completa más etapas cuando recibe una pauta visual y solicita menos ayuda que ante instrucciones extensas.',
+    'La devolución enumera dificultades con términos técnicos, sin explicar qué apoyos implementará la escuela ni cómo se revisarán.',
+    'El equipo debe decidir entre aumentar la ejercitación individual o modificar una actividad con instrucciones densas, poco tiempo y una única respuesta.',
+    'Los profesionales aplicaron instrumentos y observaron clases, pero todavía no vinculan cada necesidad identificada con acciones concretas.',
+    'Camila comunica ideas complejas oralmente y se orienta con esquemas, aunque su producción escrita es breve.',
+    'En una clase con ruido y tiempo limitado, Tomás obtiene un resultado bajo; con anticipación y una pauta por pasos trabaja sostenidamente.',
+    'Antes de escoger instrumentos, el equipo discute si necesita conocer precisión, comprensión, respuesta a ayudas o participación en tareas auténticas.',
+    'Ante una baja producción escrita, la escuela cuenta con textos finales, registros de planificación, explicaciones orales y apoyos ya probados.',
+    'Durante una entrevista accesible, la estudiante describe tareas difíciles, estrategias útiles y situaciones en que la ayuda adulta limita su autonomía.',
+    'La prueba se aplicó el día en que el estudiante llegó alterado por una situación familiar y necesitó pausas poco habituales.',
+    'El registro solo señala “no logra la actividad”, aunque el equipo necesita planificar qué ayuda probar y con qué indicador.',
+    'Una prueba formal indica bajo desempeño, mientras producciones recientes y observaciones sistemáticas muestran avances bajo ciertas condiciones.',
+    'Mientras fortalece la lectura, una estudiante comprende explicaciones orales y relaciona conceptos cuando accede al contenido por audio.',
+    'La evaluación revela que varios estudiantes se confunden ante la misma organización de instrucciones, pero muestran el aprendizaje en formatos claros.'
+  ],psychoeducational:[
+    'En una prueba individual, Benjamín obtiene un resultado bajo; en tareas curriculares explica procedimientos y corrige errores ante una pregunta de apoyo.',
+    'Dos actividades evalúan comprensión, pero una exige copiar respuestas extensas y la otra permite seleccionar y justificar oralmente.',
+    'La estudiante responde correctamente varias preguntas, aunque no explica cómo llegó a sus respuestas ni detecta una contradicción del texto.',
+    'En una tarea matemática se modificaron simultáneamente el lenguaje, el material, el tiempo y la mediación adulta; luego mejoró el resultado.',
+    'El profesional necesita conocer cómo el estudiante anticipa, ejecuta y revisa una tarea de escritura, no solo el producto final.',
+    'El equipo compara mediciones aplicadas con textos, tiempos y criterios diferentes, y advierte que esa variación afecta la interpretación.',
+    'Se propone una prueba cuya población normativa y edad no coinciden con el estudiante, aunque el instrumento está disponible.',
+    'El estudiante anota una respuesta incorrecta, pero sus pasos pueden revelar si comprendió la operación y dónde se produjo el error.',
+    'La estudiante comprende la relación matemática al eliminar vocabulario secundario, manteniendo intactos el concepto y la dificultad numérica.',
+    'Los datos cuantitativos muestran progreso, pero en el aula el estudiante evita comenzar y abandona ante el primer error.',
+    'El informe presenta un puntaje global bajo, sin detallar tareas, errores, estrategias ni respuesta a mediaciones.',
+    'El formato escrito impide mostrar lo aprendido; oralmente, el estudiante desarrolla correctamente el mismo razonamiento.'
+  ],deaIdentification:[
+    'Un curso completo presenta dificultades lectoras después de meses con alta rotación docente, poca enseñanza sistemática y escasa práctica guiada.',
+    'Tras seis semanas de enseñanza explícita, una estudiante mejora rápidamente en precisión y comienza a aplicar la estrategia sin ayuda.',
+    'El estudiante presenta bajo desempeño lector, pero ha faltado reiteradamente y no ha tenido continuidad en los apoyos.',
+    'Los errores aparecen en textos con vocabulario disciplinar todavía no enseñado; en textos familiares la lectura es adecuada.',
+    'Antes de concluir persistencia, el equipo revisa asistencia, enseñanza explícita, oportunidades de práctica y evolución durante el apoyo.',
+    'Una estudiante bilingüe comenzó recientemente a aprender en español y muestra desempeños diferentes según lengua, familiaridad cultural y tarea.',
+    'El expediente solo consigna “recibió refuerzo”, sin precisar objetivo, estrategia, frecuencia, duración, fidelidad ni progreso.',
+    'En evaluaciones cronometradas, un estudiante se bloquea y comete errores matemáticos; en actividades graduadas explica parte del procedimiento.',
+    'El estudiante responde en sesiones de apoyo, pero no utiliza la estrategia aprendida en problemas nuevos del aula.',
+    'Los resultados siguen bajos, pero la intervención se aplicó irregularmente y con actividades distintas a las acordadas.',
+    'Se detecta una dificultad visual no corregida que afecta el acceso a textos, símbolos y detalles gráficos usados en las mediciones.',
+    'Tras una intervención pertinente, intensa y bien documentada, el progreso continúa siendo menor y se examinaron explicaciones alternativas.'
+  ],supportPlanning:[
+    'El plan señala “mejorar lectura” y enumera sesiones, pero no define desempeño esperado, estrategia, responsable, indicador ni revisión.',
+    'El estudiante aumenta su precisión con apoyo individual, aunque espera que el adulto indique cada paso antes de comenzar.',
+    'El equipo debe traducir una necesidad amplia de participación en una meta observable durante tareas habituales y en un plazo definido.',
+    'Para monitorear, se comparan indicadores de ejecución administrativa con cambios efectivos en aprendizaje, participación y autonomía.',
+    'No se observa progreso; antes de cambiar el objetivo, el equipo necesita revisar si la estrategia se aplicó como fue planificada.',
+    'El apoyo ocurre fuera del aula y con tareas distintas; docente y especialista trabajan objetivos paralelos sin coordinación.',
+    'El registro informa veinte sesiones, pero no contiene datos sobre desempeño inicial, evolución, participación ni ayuda requerida.',
+    'En apoyo individual completa la tarea; en aula no reconoce cuándo usar la estrategia y vuelve a depender de indicaciones.',
+    'El borrador contiene diez objetivos simultáneos, distintos responsables y acciones difíciles de sostener.',
+    'El equipo quiere transferir una estrategia aprendida con una ficha a asignaturas, materiales, personas y situaciones diferentes.',
+    'La familia explica que una actividad diaria no es compatible con sus horarios, aunque comparte el propósito de autonomía.',
+    'En cuatro mediciones consecutivas, la estudiante alcanza el objetivo en contextos distintos sin la ayuda que antes necesitaba.',
+    'La intervención se implementó con la frecuencia y estrategia acordadas, pero los indicadores permanecen estables.',
+    'Dos apoyos producen resultados semejantes; uno exige guía permanente y el otro utiliza una pauta manejada por el estudiante.'
+  ],collaboration:[
+    'Docente y especialista trabajan con el mismo estudiante, pero planifican por separado y utilizan estrategias contradictorias.',
+    'El equipo presenta a la familia un plan ya cerrado, usa lenguaje técnico y solicita una firma sin explorar sus prioridades.',
+    'En cada reunión se repiten preocupaciones, pero no se revisan acuerdos, responsables, indicadores ni acciones previas.',
+    'La familia describe una estrategia eficaz en casa; el equipo la descarta porque no fue diseñada por un profesional.',
+    'El equipo dispone de mucha información y una hora, por lo que necesita ordenar la conversación en torno a una prioridad verificable.',
+    'La docente observa participación grupal y la especialista dificultades en tareas individuales; ambas consideran contradictorios los datos.',
+    'El acta solo dice “apoyar más” y no identifica qué hará cada persona, con qué frecuencia ni cuándo se revisará.',
+    'El estudiante pide explicar cómo vive los apoyos porque uno lo expone frente al curso y reduce su participación.',
+    'Dos profesionales discrepan sobre la intensidad del apoyo sin identificar qué evidencia permitiría resolverlo.',
+    'El servicio externo trabaja una prioridad distinta del aula y el estudiante recibe instrucciones que compiten entre sí.',
+    'Un informe diagnóstico completo fue enviado a personas que no implementan apoyos ni requieren esos antecedentes.',
+    'La familia rechaza una medida por temor a la dependencia; el equipo cree que facilitaría el acceso durante un periodo inicial.'
+  ]};
+  const module2ComplexityLayer={
+    assessment:{'Interpretación':'Debe distinguirse lo que sabe de las condiciones que le permiten demostrarlo.','Aplicación':'La decisión debe integrar fuentes complementarias y orientar una respuesta educativa.','Decisión pedagógica':'Las alternativas difieren en la calidad de evidencia y en su capacidad de orientar apoyos revisables.'},
+    psychoeducational:{'Interpretación':'Es necesario examinar qué proceso mide cada tarea y qué demanda adicional interfiere.','Aplicación':'El procedimiento debe observar estrategias, errores y respuesta a ayudas sin perder el propósito evaluado.','Decisión pedagógica':'La conclusión debe reconocer los límites de los datos y precisar qué evidencia adicional se necesita.'},
+    deaIdentification:{'Interpretación':'El equipo debe contrastar persistencia y especificidad con enseñanza y explicaciones alternativas.','Aplicación':'Se requiere documentar oportunidades, apoyos, fidelidad y evolución, no solo bajo rendimiento.','Decisión pedagógica':'La decisión debe mantener apoyos mientras se amplía evidencia y evitar una atribución prematura.'},
+    supportPlanning:{'Interpretación':'La revisión debe distinguir actividades realizadas de cambios en aprendizaje, participación o autonomía.','Aplicación':'El plan necesita conectar necesidad, objetivo, estrategia, responsable, indicador y plazo.','Decisión pedagógica':'La medida debe ser viable, favorecer autonomía y revisarse según sus resultados.'},
+    collaboration:{'Interpretación':'Debe analizarse cómo se integran perspectivas y se traducen acuerdos en acciones coherentes.','Aplicación':'La respuesta requiere prioridad compartida, aportes complementarios y seguimiento explícito.','Decisión pedagógica':'La decisión debe resguardar participación, confidencialidad y derechos, además de prever la revisión.'}
+  };
+  Object.entries(module2CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module2ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+    });
+  });
   const module3Expansions={readingProcesses:[
     ['Comprensión conceptual','¿Qué relación plantea la visión simple de la lectura?',['La comprensión depende solo de leer rápido.','La comprensión lectora resulta de la interacción entre reconocimiento de palabras y comprensión del lenguaje.','La decodificación deja de ser relevante después de primero básico.','El vocabulario reemplaza el reconocimiento de palabras.'],1],
     ['Comprensión conceptual','¿Por qué conviene analizar componentes lectores por separado?',['Para asignar una etiqueta a cada error.','Porque desempeños similares pueden originarse en procesos distintos y requerir apoyos diferentes.','Para evitar observar lectura auténtica.','Porque cada componente se enseña sin conexión con los demás.'],1],
