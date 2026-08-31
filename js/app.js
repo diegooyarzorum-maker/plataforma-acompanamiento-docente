@@ -427,6 +427,136 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','Después de una adecuación, el estudiante no progresa y la evidencia muestra una barrera distinta a la prevista. ¿Qué debe hacer el equipo?',['Mantenerla por estar documentada.','Reevaluar la necesidad, ajustar la medida y volver a monitorear su efecto.','Eliminar todos los objetivos.','Aumentar la calificación.'],1]
   ]};
   Object.entries(module1Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module1CaseContexts={bio:[
+    'Durante varias semanas, el equipo observa el desempeño en actividades individuales y grupales, comparando las ayudas disponibles y el nivel de autonomía alcanzado.',
+    'Al revisar el informe semestral, la educadora diferencial advierte que se describen características personales, pero no las exigencias de las tareas ni las condiciones del aula.',
+    'En una reunión de planificación, el equipo analiza por qué una misma estudiante obtiene resultados diferentes cuando cambia la forma de presentar las instrucciones.',
+    'Para interpretar una producción escrita, se compara lo que la estudiante puede explicar oralmente, los apoyos utilizados y la demanda específica de transcripción.',
+    'Antes de formular una hipótesis, el docente reúne observaciones en distintos agrupamientos, conversa con la estudiante y revisa cómo responde a instrucciones y apoyos.',
+    'Durante la práctica guiada, Martín completa la actividad con una pauta detallada, pero se detiene cada vez que el adulto se aleja y no inicia el paso siguiente.',
+    'En Ciencias, la evaluación busca explicar relaciones entre fenómenos, aunque el formato exige copiar varios párrafos y completar la respuesta dentro de un tiempo breve.',
+    'El registro muestra que un estudiante lee con precisión cuando trabaja con dos compañeros, pero evita hacerlo frente al curso después de experiencias de burla.',
+    'El equipo implementa un organizador visual durante tres semanas y necesita determinar si el cambio refleja aprendizaje, dependencia del recurso o una mejora transferible.',
+    'Después de seis semanas de lectura compartida, la alumna muestra avances parciales, participa con mayor seguridad y todavía requiere mediación frecuente para sostener la tarea.',
+    'Dos estudiantes poseen el mismo diagnóstico formal y trabajan el mismo objetivo; sin embargo, uno progresa con modelado y el otro responde mejor a apoyos visuales.',
+    'La segmentación y el modelado de consignas mejoran el inicio y la finalización de tareas en gran parte del curso, aunque algunos estudiantes aún requieren ayudas adicionales.',
+    'En una clase observada, la participación cambia notoriamente cuando se anticipa la secuencia, se ajusta el agrupamiento y se ofrecen distintas formas de responder.',
+    'Un equipo atribuye la baja producción a la DEA registrada, pero no ha comparado el desempeño con apoyos ni ha descrito las demandas de la actividad.',
+    'Durante una unidad matemática, el estudiante comprende las relaciones con objetos y dibujos, pero se bloquea al pasar directamente a la notación simbólica.',
+    'Tras analizar varias evidencias, el equipo debe escoger una respuesta que mantenga el objetivo, modifique las condiciones pertinentes y permita evaluar posteriormente su efecto.'
+  ],evolution:[
+    'Al revisar el reglamento y las prácticas de aula, el equipo observa que el acceso a experiencias comunes depende de que cada estudiante responda sin apoyos adicionales.',
+    'Después de escuchar a estudiantes que quedaban fuera de talleres y salidas, la escuela modifica horarios, agrupamientos, materiales y formas de participación.',
+    'En la planificación semanal se utiliza una guía idéntica para todo el curso y solo después del fracaso se entrega una versión reducida a algunos estudiantes.',
+    'Durante una reunión, se afirma que un estudiante es responsabilidad exclusiva del PIE y que el docente de aula solo debe facilitar el espacio físico.',
+    'Una práctica institucional separa preventivamente a quienes podrían experimentar dificultad, aunque no se han probado apoyos dentro de la actividad común.',
+    'La escuela organiza actos sobre diversidad, pero mantiene exposiciones orales obligatorias como única forma válida de participar y demostrar aprendizaje.',
+    'El equipo considera exitosa una medida porque el estudiante está presente en el aula común, sin analizar sus oportunidades reales de aprender, decidir o colaborar.',
+    'Un estudiante comparte el espacio del curso, pero desarrolla permanentemente ejercicios paralelos que no se relacionan con el proyecto ni con sus compañeros.',
+    'Para responder a dificultades persistentes, el equipo compara aumentar retiros individuales con fortalecer apoyos y cooperación dentro del aula común.',
+    'Una regla se aplica de igual forma a todo el alumnado, pero sus efectos excluyen sistemáticamente a quienes necesitan otras modalidades de comunicación.',
+    'La escuela permite ingresar al aula común únicamente a estudiantes capaces de seguir el ritmo, los materiales y las evaluaciones sin ajustes.',
+    'A partir de testimonios y registros de participación, el establecimiento decide modificar prácticas comunes en vez de preparar a cada estudiante para adaptarse a ellas.',
+    'Una docente detecta que el formato único deja fuera a varios estudiantes y debe revisar si adapta al final o diseña desde el inicio para la variabilidad.',
+    'En el consejo técnico se discute si pertenecer al PIE traslada la responsabilidad educativa desde el aula común hacia el equipo especialista.',
+    'Una medida presentada como integración aumenta la presencia física, pero no el aprendizaje ni la pertenencia; el equipo debe decidir cómo evaluarla.',
+    'Los datos muestran exclusión reiterada producida por una política uniforme, aunque la comunidad sostiene que tratar a todos igual garantiza justicia.'
+  ],inclusion:[
+    'Durante una experiencia de Ciencias, la información esencial se presenta mediante una demostración distante, sin descripción oral, imágenes cercanas ni materiales alternativos.',
+    'Un estudiante comprende los contenidos y asiste regularmente, pero en los trabajos grupales recibe siempre tareas periféricas y nunca participa en decisiones relevantes.',
+    'La familia manifiesta interés en participar, aunque su jornada laboral coincide con el único horario de reunión y la escuela no ofrece otros canales.',
+    'El objetivo de la actividad es construir y justificar una posición, pero varios estudiantes se pierden al organizar razones, evidencias y contraargumentos.',
+    'En una plataforma educativa, categorías y estados se comunican exclusivamente mediante colores similares, sin texto, símbolos ni otra señal complementaria.',
+    'Durante una conversación sobre migración, la docente solicita a una estudiante que explique la visión de todo su país frente al curso.',
+    'Al comenzar una tarea, varios alumnos permanecen inactivos porque la consigna contiene acciones implícitas, vocabulario poco familiar y ningún ejemplo del producto esperado.',
+    'Un recurso facilita el desempeño académico, pero se entrega de una forma visible que identifica al estudiante, provoca comentarios y afecta su pertenencia.',
+    'Una actividad denominada opcional reúne siempre a quienes requieren mayores apoyos fuera del proyecto central y les asigna funciones de menor relevancia.',
+    'Después de diversificar materiales y formas de participación para todo el curso, un grupo pequeño continúa sin acceder al aprendizaje previsto.',
+    'La escuela analiza una situación y necesita diferenciar la condición contextual que limita la participación de la ayuda específica requerida para superarla.',
+    'En la planificación se proponen distintas formas de acceso y respuesta para el grupo antes de conocer quién podría experimentar dificultad.',
+    'Una plataforma de lectura funciona correctamente para la mayoría, pero su diseño impide utilizar lector de pantalla y navegar mediante teclado.',
+    'Las comunicaciones a las familias incluyen abreviaturas normativas y términos técnicos, sin ejemplos ni versiones comprensibles para distintos repertorios lingüísticos.',
+    'Algunos estudiantes necesitan más tiempo y una pauta para organizar la respuesta, aunque el propósito es evaluar la calidad de sus argumentos y no la rapidez.',
+    'El equipo constata baja participación de varios estudiantes y debe decidir si comienza por derivaciones individuales o por revisar la actividad y escuchar sus perspectivas.'
+  ],regulations:[
+    'En un consejo técnico, el equipo debe fundamentar una decisión curricular y distingue entre normas sobre inclusión, identificación de NEE, diversificación y evaluación.',
+    'Una evaluación sumativa utiliza un formato único que no considera los apoyos implementados y contradice la evidencia obtenida durante la enseñanza.',
+    'El equipo planifica una adecuación curricular en educación básica y necesita identificar el texto normativo que orienta diversificación y ajustes individuales.',
+    'Una escuela mantiene una única prueba para todo el curso, aunque la enseñanza fue diversificada y el formato impide que algunos demuestren su aprendizaje.',
+    'Antes de modificar individualmente el currículo, el equipo revisa qué estrategias diversificadas se implementaron, con qué intensidad y qué respuesta produjeron.',
+    'Durante el proceso de admisión, una familia recibe una negativa vinculada directamente con la discapacidad y las necesidades de apoyo de su hija.',
+    'Frente a conflictos reiterados, el establecimiento propone solo sanciones y no considera prevención, participación, cuidado colectivo ni continuidad del aprendizaje.',
+    'Ante un caso complejo, distintas personas citan decretos de memoria sin identificar primero el derecho, el proceso educativo ni la materia que regula cada norma.',
+    'Un plan de apoyo se elabora sin conversar con el estudiante ni su familia, aunque las decisiones modificarán sus oportunidades cotidianas de participación.',
+    'El equipo encuentra dos decretos con el mismo número, pero de años y materias diferentes, y debe evitar aplicar una referencia equivocada.',
+    'La evidencia formativa muestra aprendizaje, pero la prueba final introduce demandas no enseñadas y produce un resultado que el equipo debe interpretar.',
+    'Una sanción reiterada deja al estudiante fuera de clases y actividades evaluadas, afectando simultáneamente convivencia, inclusión y continuidad educativa.',
+    'Información diagnóstica completa circula entre personas que no participan en la implementación de apoyos y no necesitan conocer esos antecedentes.',
+    'Una disposición interna restringe el acceso de un estudiante; el equipo directivo debe resolver la tensión entre uniformidad administrativa y derechos educativos.',
+    'Al analizar una eventual no promoción, existen antecedentes de progreso, asistencia, apoyos, bienestar y condiciones contextuales que no se reflejan en el promedio.',
+    'El equipo enfrenta una situación que involucra evaluación, participación y adecuaciones, por lo que debe determinar cómo consultar y articular normativa vigente.'
+  ],decree83:[
+    'El docente ofrece el mismo contenido en audio y formato digital accesible, y mantiene para todo el grupo el análisis y los criterios del objetivo original.',
+    'Sin documentar apoyos previos ni respuesta a la enseñanza, el equipo propone eliminar un objetivo básico basándose únicamente en el diagnóstico.',
+    'Una estudiante explica con precisión el contenido, pero la escritura manual lenta le impide terminar; la caligrafía no forma parte del objetivo evaluado.',
+    'La actividad pretende evaluar lectura precisa de palabras, y el equipo compara apoyos que facilitan el acceso con otros que podrían ejecutar la lectura por el estudiante.',
+    'Al revisar un PACI, se observa una lista genérica de medidas sin necesidad identificada, responsables, indicadores ni fecha para valorar resultados.',
+    'Un estudiante requiere más práctica, tiempo y modelado para consolidar el mismo objetivo, y todavía no existe evidencia que justifique modificarlo.',
+    'Después de implementar un formato accesible, el equipo debe distinguir entre uso frecuente del recurso y mejora real en acceso, aprendizaje y autonomía.',
+    'Una adecuación de acceso fue efectiva durante meses; actualmente el estudiante demuestra el aprendizaje de manera autónoma en distintos contextos.',
+    'Existen dos alternativas viables: una modifica el objetivo curricular y otra elimina una barrera del formato manteniendo intacto el aprendizaje esperado.',
+    'El seguimiento muestra ausencia de progreso y nuevas evidencias indican que la adecuación implementada respondía a una barrera distinta de la actual.',
+    'En una tarea escrita, la estudiante utiliza teclado para producir el mismo tipo de texto y es evaluada con los criterios de contenido y organización del curso.',
+    'Pese a estrategias diversificadas sostenidas y monitoreadas, el estudiante mantiene un desfase relevante y el equipo considera graduar la complejidad del objetivo.',
+    'Una dificultad aparece en gran parte del curso ante instrucciones extensas; aún no se han probado ejemplos, segmentación ni apoyos visuales comunes.',
+    'El estudiante comprende el contenido, pero el tamaño y contraste del texto impreso impiden acceder a la información necesaria para realizar la actividad.',
+    'Antes de definir una adecuación individual, el equipo dispone de evaluación amplia, registros de diversificación y evidencia de respuesta insuficiente.',
+    'Al seleccionar una medida, el equipo compara cambios de diferente magnitud y necesita conservar al máximo la participación y el progreso en el currículo común.'
+  ]};
+  const module1ContextOrder={
+    bio:[0,1,2,14,4,15,14,3,12,5,6,7,8,9,10,11],
+    evolution:[0,10,4,5,9,14,10,1,2,3,4,5,6,7,8,9],
+    inclusion:[12,13,14,11,5,15,0,1,2,3,4,5,6,7,8,9],
+    regulations:[2,3,4,5,6,7,1,3,8,9,10,11,12,13,14,15],
+    decree83:[10,11,12,13,14,15,0,1,2,3,4,5,6,7,8,9]
+  };
+  const module1ComplexityLayer={
+    bio:{
+      'Interpretación':'El registro reúne observaciones en más de un contexto, por lo que el equipo debe distinguir entre las características del estudiante, las demandas de la tarea y los apoyos disponibles.',
+      'Aplicación':'El propósito curricular se mantiene y se busca una medida que reduzca la barrera sin sustituir el aprendizaje que el estudiante debe desarrollar o demostrar.',
+      'Decisión pedagógica':'Las alternativas consideradas podrían aportar, pero el equipo debe priorizar la que articule mejor evidencia individual, condiciones contextuales, autonomía y seguimiento posterior.'
+    },
+    evolution:{
+      'Interpretación':'Además de la presencia física, los registros muestran quién accede al aprendizaje común, qué prácticas se transforman y a quién se atribuye la responsabilidad de adaptarse.',
+      'Aplicación':'La revisión debe distinguir entre incorporar al estudiante bajo condiciones ya definidas y transformar la experiencia común para ampliar participación, aprendizaje y pertenencia.',
+      'Decisión pedagógica':'El equipo dispone de datos sobre presencia, participación, aprendizaje y pertenencia, y debe evitar decidir únicamente por tradición institucional o categoría diagnóstica.'
+    },
+    inclusion:{
+      'Interpretación':'La información permite analizar si la limitación se relaciona con el recurso, la organización, la comunicación o las relaciones, sin atribuirla automáticamente al estudiante.',
+      'Aplicación':'El propósito curricular se mantiene y se busca una medida que reduzca la barrera sin sustituir el aprendizaje que el estudiante debe desarrollar o demostrar.',
+      'Decisión pedagógica':'Antes de decidir, el equipo recoge la perspectiva de quienes participan y compara efectos sobre acceso, aprendizaje, autonomía y pertenencia.'
+    },
+    regulations:{
+      'Interpretación':'Para fundamentar el análisis, el equipo debe identificar el derecho y el proceso educativo comprometidos, además de la materia específica que regula cada norma.',
+      'Aplicación':'La respuesta debe articular derechos y normativa vigente con la evidencia pedagógica del caso, evitando aplicar un decreto solo por su número o familiaridad.',
+      'Decisión pedagógica':'La decisión requiere consultar textos oficiales vigentes, justificar cómo se relacionan con el caso y definir responsabilidades y seguimiento.'
+    },
+    decree83:{
+      'Interpretación':'Para clasificar la medida, el equipo debe determinar si cambia únicamente el acceso o si modifica el aprendizaje curricular esperado.',
+      'Aplicación':'El propósito curricular se mantiene y se busca una medida que reduzca la barrera sin sustituir el aprendizaje que el estudiante debe desarrollar o demostrar.',
+      'Decisión pedagógica':'Las alternativas difieren en magnitud, por lo que debe priorizarse una respuesta fundamentada, lo menos significativa posible y sujeta a monitoreo y revisión.'
+    }
+  };
+  Object.entries(module1CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module1ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[module1ContextOrder[key][position]]}${complexity} ${centralQuestion}`;
+    });
+  });
   const module2Expansions={assessment:[
     ['Comprensión conceptual','¿Qué significa que una evaluación tenga carácter funcional?',['Que se aplica rápidamente.','Que describe cómo participa y aprende el estudiante bajo condiciones concretas para orientar apoyos.','Que produce siempre un diagnóstico.','Que utiliza exclusivamente tareas cotidianas.'],1],
     ['Comprensión conceptual','¿Por qué las fortalezas forman parte de una evaluación integral?',['Solo equilibran el informe.','Permiten comprender recursos disponibles y diseñar apoyos que favorezcan aprendizaje y participación.','Reemplazan el análisis de dificultades.','Determinan automáticamente la promoción.'],1],
