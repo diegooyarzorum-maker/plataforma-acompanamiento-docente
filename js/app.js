@@ -780,6 +780,109 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','Dos apoyos muestran resultados diferentes, pero también distinta frecuencia de aplicación. ¿Cómo decidir?',['Elegir el que obtuvo mayor puntaje.','Comparar fidelidad y dosis antes de atribuir diferencias al método.','Promediar ambos resultados.','Suspender los dos.'],1]
   ]};
   Object.entries(module3Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module3CaseContexts={readingProcesses:[
+    'En textos escuchados, Elisa explica relaciones y vocabulario; al leer el mismo nivel de contenido, silabea, realiza pausas frecuentes y olvida el inicio.',
+    'Matías reconoce palabras con precisión y ritmo adecuado, recupera datos explícitos, pero no justifica inferencias ni relaciona información distante.',
+    'El equipo dispone de lectura oral, comprensión al escuchar, precisión en palabras y pseudopalabras, fluidez y respuestas ante distintos apoyos.',
+    'Al leer palabras nuevas, Fernanda segmenta cada sonido, pierde la combinación y necesita que el adulto modele nuevamente el procedimiento.',
+    'Después de una lectura precisa, Vicente no advierte que una oración contradice la información anterior y continúa respondiendo desde su primera interpretación.',
+    'En un grupo aparecen puntajes bajos similares, pero los registros muestran errores de reconocimiento, lentitud, vocabulario limitado y dificultades inferenciales diferentes.',
+    'Joaquín reconoce palabras con precisión y comprende explicaciones orales, pero lee tan lentamente que al final de una oración no recuerda su comienzo.',
+    'Paula lee palabras y pseudopalabras sin errores; cuando escucha el mismo texto tampoco explica sus relaciones ni vocabulario central.',
+    'El equipo necesita aislar el reconocimiento de palabras nuevas sin que el resultado dependa de vocabulario memorizado o conocimiento del tema.',
+    'Para comparar modalidades, se preparan dos textos con contenidos semejantes, pero uno incluye vocabulario y estructura sintáctica mucho más complejos.',
+    'Tomás falla una pregunta sobre un fenómeno desconocido, aunque decodifica con precisión y comprende textos de temas que ha estudiado previamente.',
+    'El registro disponible consigna solo un puntaje lector total, sin precisión, latencia, autocorrecciones, comprensión oral ni respuesta a ayudas.',
+    'Antonia pierde el sentido en párrafos extensos, pero comprende al releer segmentos breves y explicar después cómo se conectan.',
+    'Dos estudiantes obtienen 45%: uno sustituye palabras y el otro lee con precisión, pero no integra las ideas principales.',
+    'La lectura oral de Diego es lenta y vacilante frente al curso; silenciosamente responde con precisión y no presenta errores de reconocimiento.',
+    'Después de una intervención explícita mejora la decodificación de palabras nuevas, pero la comprensión de textos permanece sin cambios.'
+  ],decodingFluency:[
+    'Al leer, Simón sustituye palabras por otras con el mismo inicio y obtiene resultados especialmente bajos en pseudopalabras que nunca ha visto.',
+    'Catalina lee todas las palabras correctamente, pero corta las frases, ignora la puntuación y no conserva la entonación de las preguntas.',
+    'Durante varias sesiones, un estudiante identifica sonidos aislados, pero no logra combinarlos de manera continua para reconocer la palabra.',
+    'El curso practica con cronómetro; algunos aumentan velocidad, aunque omiten palabras, pierden fraseo y comprenden menos el texto.',
+    'Tras cuatro semanas, las palabras por minuto aumentan, pero también las sustituciones y las respuestas de comprensión incorrectas.',
+    'Dos lectores demoran lo mismo: uno comete errores en grupos consonánticos y otro lee preciso, aunque con pausas dentro de cada frase.',
+    'En tres registros, Andrés transforma “plato” en “pato”, “blusa” en “busa” y presenta el mismo patrón en palabras nuevas.',
+    'Constanza reconoce palabras aisladas con rapidez, pero en oraciones complejas cambia las pausas, pierde ritmo y responde parcialmente.',
+    'La docente introduce una correspondencia compleja con una definición y luego solicita leer un texto difícil sin práctica guiada intermedia.',
+    'Un estudiante mira la ilustración y dice una palabra semánticamente posible, aunque varias letras no coinciden con lo escrito.',
+    'Para lectura repetida se consideran textos de dificultad, extensión y propósito distintos, además de criterios de precisión, fraseo y comprensión.',
+    'Ante la sustitución “camino” por “camión”, el adulto necesita ofrecer una indicación que ayude a revisar letras y significado sin entregar la palabra.',
+    'La precisión aumenta en listas practicadas, pero en cuentos reaparecen errores cuando las mismas correspondencias se presentan en contexto.',
+    'El indicador mejora en palabras por minuto, mientras el fraseo y la comprensión permanecen estables o disminuyen.',
+    'En lectura pública, Nicolás se bloquea y omite palabras; individualmente lee el mismo texto con precisión y ritmo adecuados.',
+    'Los errores persisten pese a una intervención explícita aplicada con la frecuencia, secuencia y práctica que fueron planificadas.'
+  ],readingComprehension:[
+    'Sofía lee con precisión y ritmo, pero desconoce palabras centrales; después de explicarlas, relaciona mejor las ideas del texto.',
+    'Durante la lectura, Benjamín mantiene su primera interpretación aunque una oración posterior la contradice y no vuelve a revisar.',
+    'Antes de leer un texto científico, el equipo selecciona palabras críticas y decide cómo enseñarlas sin anticipar todas las respuestas.',
+    'Para inferir por qué cambia un personaje, el estudiante debe combinar una acción inicial, una conversación posterior y conocimiento pertinente.',
+    'Valentina reconoce que perdió el sentido en el segundo párrafo, pero continúa hasta el final sin localizar dónde surgió la confusión.',
+    'Dos lectores precisos fallan la misma pregunta: uno desconoce términos centrales y otro comprende las palabras, pero no conecta las pistas.',
+    'Emilia recuerda nombres, fechas y detalles, aunque no logra explicar de qué trata principalmente el texto ni jerarquizar información.',
+    'Cristóbal resume cada párrafo por separado, pero no vincula la causa presentada al inicio con la consecuencia explicada al final.',
+    'Al modelar la idea central, la docente compara información repetida, detalles y la afirmación que integra el contenido global.',
+    'El texto contiene conceptos científicos nuevos; se busca facilitar el acceso manteniendo el propósito de construir significado al leer.',
+    'Una pregunta solicita explicar el cambio del protagonista con pistas del texto, mientras otras solo piden opinión o recuento literal.',
+    'El estudiante detecta una inconsistencia, pero no sabe qué segmento releer ni cómo ajustar la interpretación previa.',
+    'La estrategia funciona en el texto modelado; el equipo necesita saber si se selecciona de forma autónoma con otros géneros y propósitos.',
+    'Una pauta completa mejora las respuestas, pero el estudiante espera que el adulto lea cada pregunta y señale cuándo usarla.',
+    'La mayoría del curso falla inferencias en un texto ambiguo que no fue trabajado con modelado ni conversación sobre pistas.',
+    'Después de enseñar vocabulario, el lector comprende palabras aisladas, pero todavía no integra relaciones entre párrafos.'
+  ],writingProduction:[
+    'Laura relata oralmente una historia completa y organizada; al escribir a mano produce dos oraciones, pero al dictar conserva personajes y secuencia.',
+    'Felipe escribe varias oraciones con ortografía funcional, aunque cambia de tema, repite ideas y no organiza la información según el propósito.',
+    'Antes de redactar un texto argumentativo, el estudiante tiene opiniones, pero no distingue tesis, razones, evidencias ni destinatario.',
+    'Durante la revisión, la estudiante busca tildes y limpieza, pero no relee si las ideas cumplen el propósito o siguen un orden comprensible.',
+    'Al escribir el primer borrador, Nicolás se detiene ante cada duda ortográfica, pierde ideas y termina con un texto mucho más breve que su relato oral.',
+    'Ante una producción breve, el equipo cuenta palabras, pero aún no compara planificación, dictado, teclado, escritura manual ni respuesta a apoyos.',
+    'Un estudiante escribe oraciones completas, pero las presenta sin conectores y con saltos que dificultan seguir la relación entre ideas.',
+    'En computador, Javiera produce un texto organizado y extenso; a mano, demora en cada letra y reduce notablemente el contenido.',
+    'Para planificar una narración, se busca una herramienta que organice situación, problema, acciones y desenlace sin escribir el texto por el estudiante.',
+    'Dos ideas son pertinentes, pero aparecen como oraciones aisladas; la docente quiere enseñar a expresar la relación semántica entre ellas.',
+    'En su segunda versión, el estudiante corrige mayúsculas y tildes, pero mantiene información irrelevante y un orden difícil de comprender.',
+    'Durante el borrador surgen dudas ortográficas frecuentes que interrumpen la generación y organización del contenido.',
+    'El equipo compara muestras de distinta extensión y género usando solo cantidad de palabras como señal de progreso.',
+    'El dictado por voz aumenta el contenido y permite revisar ideas, aunque uno de los objetivos también incluye desarrollar transcripción escrita.',
+    'La docente corrige todos los errores con tinta roja; el estudiante recibe la nota, pero no produce una nueva versión ni transfiere las correcciones.',
+    'Dos estudiantes escriben tres líneas: uno no genera contenido ni oralmente y otro expresa muchas ideas, pero se demora al transcribir.'
+  ],literacyIntervention:[
+    'La intervención planificada contempla doce sesiones, pero se realizaron cuatro, se cambiaron actividades y no se registró la dosis aplicada.',
+    'El estudiante usa la estrategia con indicaciones durante apoyo individual, aunque en aula no reconoce cuándo aplicarla ni inicia sin adulto.',
+    'Para monitorear decodificación, el equipo compara listas de diferente dificultad y registra únicamente cantidad total de aciertos.',
+    'Tras una intervención fiel, explícita y suficientemente intensa, el progreso es mínimo y los tipos de error permanecen estables.',
+    'El desempeño mejora durante la sesión, pero depende de recordatorios en cada paso y no se mantiene con materiales nuevos.',
+    'El equipo debe decidir entre una prueba única al final o una secuencia que permita formular, comprobar y ajustar una hipótesis pedagógica.',
+    'El estudiante reconoce las palabras practicadas, pero no aplica las correspondencias en palabras nuevas equivalentes.',
+    'Los puntajes fluctúan porque cada sesión utiliza tareas, tiempos y criterios distintos, sin medidas comparables de progreso.',
+    'El objetivo de fluidez propone solo aumentar velocidad, aunque los registros muestran sustituciones, fraseo débil y comprensión variable.',
+    'La asistencia está completa, pero se necesita comprobar si cada sesión incluyó modelado, práctica, retroalimentación y duración previstas.',
+    'En apoyo individual hay progreso consistente; la estrategia todavía no se practica coordinadamente en tareas habituales del aula.',
+    'Ante un error de decodificación, el adulto dice la palabra de inmediato y continúa, sin orientar dónde estuvo el quiebre.',
+    'Después de una mejora inicial, la curva se estabiliza y simultáneamente aumentó la dificultad de los textos utilizados.',
+    'El estudiante alcanza el criterio durante varias semanas y usa la estrategia con autonomía en actividades del aula.',
+    'No se observa progreso, aunque la intervención se implementó con fidelidad, dosis suficiente y tareas alineadas con el objetivo.',
+    'Dos métodos muestran resultados distintos, pero uno se aplicó tres veces por semana y el otro solo en sesiones esporádicas.'
+  ]};
+  const module3ComplexityLayer={
+    readingProcesses:{'Interpretación':'Debe localizarse el proceso que limita el desempeño sin confundir manifestaciones semejantes.','Aplicación':'La evidencia debe permitir comparar reconocimiento, fluidez, lenguaje y comprensión bajo condiciones equivalentes.','Decisión pedagógica':'La decisión debe diferenciar apoyos según el patrón y comprobar su efecto con nuevas evidencias.'},
+    decodingFluency:{'Interpretación':'Importa analizar precisión, tipo de error, ritmo, fraseo y efecto sobre el significado, no solo velocidad.','Aplicación':'La enseñanza debe ser explícita, acumulativa y acompañada de retroalimentación que permita autocorrección.','Decisión pedagógica':'El apoyo se juzga por precisión, automatización, prosodia y comprensión, además de su transferencia.'},
+    readingComprehension:{'Interpretación':'La lectura precisa no basta para explicar el resultado; deben examinarse vocabulario, integración, inferencia y monitoreo.','Aplicación':'El apoyo debe hacer visible el razonamiento y conservar la responsabilidad del estudiante por construir significado.','Decisión pedagógica':'La respuesta se ajusta al proceso comprometido y debe avanzar hacia el uso autónomo en textos variados.'},
+    writingProduction:{'Interpretación':'El producto final debe contrastarse con planificación, composición, transcripción y revisión en distintas modalidades.','Aplicación':'El apoyo debe reducir la carga secundaria sin sustituir el proceso de escritura que se busca desarrollar.','Decisión pedagógica':'La intervención se diferencia según el quiebre y mantiene separados los propósitos de composición y transcripción.'},
+    literacyIntervention:{'Interpretación':'Antes de atribuir falta de respuesta deben revisarse comparabilidad, fidelidad, intensidad, generalización y autonomía.','Aplicación':'Cada acción debe vincular línea base, objetivo observable, procedimiento explícito e indicador sensible al progreso.','Decisión pedagógica':'La evidencia permite mantener, intensificar, modificar o retirar gradualmente el apoyo sin esperar al final del periodo.'}
+  };
+  Object.entries(module3CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module3ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+    });
+  });
   const module4Expansions={mathProcesses:[
     ['Comprensión conceptual','¿Por qué un error matemático debe analizarse como procedimiento?',['Porque la respuesta final nunca importa.','Porque revela representaciones, relaciones y decisiones que orientan apoyos específicos.','Porque todos los errores tienen la misma causa.','Porque evita enseñar contenidos.'],1],
     ['Comprensión conceptual','¿Qué función cumple el lenguaje matemático?',['Decorar la solución.','Representar y comunicar cantidades, relaciones, operaciones y argumentos.','Reemplazar toda representación concreta.','Memorizar símbolos aislados.'],1],
