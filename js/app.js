@@ -1120,6 +1120,109 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','Las evidencias de distintas modalidades son inconsistentes. ¿Cómo decidir?',['Elegir la mejor.','Analizar condiciones, comparabilidad y patrones, y recoger evidencia adicional focalizada.','Promediar sin análisis.','Usar solo la prueba escrita.'],1]
   ]};
   Object.entries(module5Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module5CaseContexts={diversifiedDesign:[
+    'El objetivo es explicar relaciones causales, pero la actividad exige leer un texto denso, copiar preguntas y responder en un único formato escrito.',
+    'Para apoyar a una estudiante, se entrega una ficha de menor nivel que elimina el análisis central sin identificar primero la barrera.',
+    'En una clase, algunos comprenden mejor con esquemas, ejemplos orales o texto; todos deben demostrar la misma relación conceptual.',
+    'Un estudiante usa un organizador para ordenar ideas, pero espera que el adulto complete las categorías y no lo selecciona en tareas nuevas.',
+    'La consigna extensa contiene vocabulario y pasos secundarios que no forman parte del objetivo que será evaluado.',
+    'Pese a diversificar acceso, participación y enseñanza durante varias semanas, un estudiante no progresa en el objetivo monitoreado.',
+    'El propósito es comparar fuentes y se permiten conclusiones orales, escritas o apoyadas visualmente con los mismos criterios de evidencia.',
+    'Una estudiante recibe una tarea más simple por su diagnóstico, aunque no se analizó qué demanda específica restringía su participación.',
+    'El video contiene información necesaria, pero no tiene subtítulos ni transcripción y parte del curso no accede al audio.',
+    'En una discusión, solo se considera participación hablar espontáneamente frente al grupo, aunque el objetivo es argumentar con evidencia.',
+    'La instrucción presenta cinco acciones simultáneas y lenguaje ambiguo que agrega demanda ajena al contenido central.',
+    'Se prueba una alternativa de acceso novedosa, pero el equipo registra solo si fue utilizada y no su efecto en autonomía o aprendizaje.',
+    'El organizador facilita la tarea conocida, aunque mantiene todas las pistas y no se ha enseñado cuándo ni cómo usarlo.',
+    'Una adaptación permite responder sin realizar el razonamiento que constituye precisamente el aprendizaje evaluado.',
+    'Una alternativa incorporada para algunos mejora acceso y participación de gran parte del curso en distintas actividades.',
+    'Después de una diversificación planificada y monitoreada, persiste una necesidad específica que requiere analizar apoyos individualizados.'
+  ],explicitTeaching:[
+    'El docente resuelve varios ejemplos mientras el grupo observa y luego asigna una tarea nueva sin práctica intermedia ni retroalimentación.',
+    'Antonia recita todos los pasos de una estrategia, pero no reconoce en qué situaciones debe seleccionarla ni cuál es su propósito.',
+    'Durante el modelado de comprensión, el profesor necesita hacer visibles las pistas, decisiones y comprobaciones que orientan su pensamiento.',
+    'Después de explicar un procedimiento, el docente pregunta “¿entendieron?” y continúa sin recoger una respuesta observable del grupo.',
+    'Ante una consigna abierta, un estudiante se detiene; existen ayudas posibles desde una pregunta breve hasta una pauta completa.',
+    'Una pauta permite completar la tarea, pero los estudiantes no explican el proceso y dependen de cada uno de sus pasos.',
+    'El docente resuelve todos los ejemplos y pasa directamente al trabajo independiente, donde aparecen errores que no observó previamente.',
+    'Una estudiante repite una secuencia memorizada aun cuando las condiciones del problema exigen una estrategia diferente.',
+    'Al leer, el profesor detecta una contradicción y debe mostrar cómo la identifica, relee y modifica su interpretación.',
+    'Durante el modelado, el equipo busca una forma de comprobar comprensión antes de finalizar la explicación.',
+    'El estudiante no inicia una tarea abierta; el docente puede orientar su atención sin realizar por él el primer paso.',
+    'La práctica guiada contiene pocas respuestas del alumnado y la corrección se entrega únicamente al terminar toda la actividad.',
+    'La estrategia se aplica con precisión en ejemplos conocidos, pero todavía no se ha probado con contextos variados ni menos claves.',
+    'Durante la misma tarea, algunos necesitan un ejemplo, otros una pregunta y otros ya trabajan de forma autónoma.',
+    'Una pauta asegura productos completos, pero nadie puede justificar las decisiones que siguió para obtenerlos.',
+    'El mismo error persiste después de repetir varias veces una indicación verbal general que no identifica el punto de quiebre.'
+  ],practiceFeedback:[
+    'Una estudiante acierta cuando los ejercicios aparecen agrupados por estrategia, pero se confunde cuando debe decidir cuál utilizar.',
+    'La retroalimentación escrita dice solamente “revisa”, sin identificar criterio, evidencia ni acción para un nuevo intento.',
+    'Después de una sesión extensa el resultado mejora, pero una semana más tarde el aprendizaje no se recupera sin ayuda.',
+    'El docente muestra únicamente ejemplos correctos; los estudiantes no distinguen cuándo una estrategia deja de ser pertinente.',
+    'Ante una respuesta incompleta, se necesita una devolución que reconozca el avance y oriente una modificación concreta.',
+    'El grupo logra precisión con una lista de control completa, aunque no trabaja de manera autónoma cuando esta se retira.',
+    'Los ejercicios del contenido nuevo reemplazan completamente aprendizajes anteriores y no exigen recuperarlos ni discriminarlos.',
+    'Un error se registra como falta de capacidad, sin analizar la estrategia utilizada ni modificar la enseñanza posterior.',
+    'La práctica se concentra en una única jornada con relectura pasiva y no vuelve a solicitar recuperación en el tiempo.',
+    'Se comparan casos muy semejantes, pero no se explican las condiciones que determinan qué estrategia corresponde aplicar.',
+    'El comentario entrega la respuesta correcta, pero no solicita que el estudiante revise su producción ni explique el cambio.',
+    'La lista de control mantiene todas las claves después de varias semanas y el estudiante no comprueba su trabajo sin ella.',
+    'El adulto indica siempre meta, estrategia y pasos; el estudiante completa, pero no planifica ni monitorea su propio trabajo.',
+    'La práctica masiva produce una mejora inmediata que desaparece cuando el aprendizaje se evalúa nuevamente días después.',
+    'Al recibir la respuesta, el estudiante corrige ese ejercicio, aunque repite el mismo error en situaciones nuevas.',
+    'El grupo alcanza precisión con apoyo constante; la siguiente prioridad es mantener el aprendizaje con menor ayuda y mayor variación.'
+  ],accessSupports:[
+    'En Ciencias, un lector de texto permite acceder al contenido y responder relaciones conceptuales; la decodificación no forma parte del objetivo.',
+    'Una aplicación incorpora animaciones, sonidos y opciones que desvían la atención y dificultan localizar la información relevante.',
+    'La hoja presenta poco espacio, bajo contraste y muchas consignas juntas, aunque la cantidad y complejidad del contenido son pertinentes.',
+    'Se entrega una herramienta nueva sin modelado ni práctica y se utiliza por primera vez durante una evaluación.',
+    'Un estudiante se fatiga al copiar, pero la tarea busca comprobar comprensión conceptual y no velocidad ni caligrafía.',
+    'Un apoyo permite participar, aunque requiere presencia adulta permanente y no se ha comparado el desempeño sin indicaciones.',
+    'Un lector de texto facilita responder una actividad de Ciencias donde el objetivo es interpretar evidencia, no leer palabras.',
+    'Una aplicación considerada accesible introduce estímulos y navegación compleja que crean nuevas dificultades durante el uso.',
+    'El material está visualmente saturado, pero es posible reorganizar jerarquía, contraste y segmentos conservando todas las preguntas.',
+    'La herramienta fue entregada directamente y el estudiante no conoce sus funciones ni cuándo seleccionarlas.',
+    'La copia extensa consume tiempo y esfuerzo, mientras el criterio evaluado es explicar relaciones entre conceptos.',
+    'El equipo registra que el apoyo fue usado, pero no si mejoró acceso, participación, autonomía o fidelidad al objetivo.',
+    'Un temporizador visual aumenta la ansiedad y reduce el desempeño, pese a que pretendía anticipar el tiempo disponible.',
+    'El recurso funciona en atención individual, pero en aula no está disponible ni coordinado con la planificación docente.',
+    'Dos herramientas reducen la misma barrera, aunque difieren en facilidad, autonomía, preferencias y sostenibilidad.',
+    'El apoyo es eficaz académicamente, pero identifica públicamente al estudiante y este solicita una alternativa menos visible.'
+  ],diversifiedAssessment:[
+    'El objetivo es argumentar con evidencia, pero una modalidad alternativa permite responder verdadero o falso sin construir una justificación.',
+    'El estudiante mejora cuando la consigna se segmenta y aclara, manteniendo intactas las relaciones y demandas cognitivas evaluadas.',
+    'Para evaluar comprensión histórica, se consideran formatos orales, escritos y visuales que deben demostrar las mismas relaciones causales.',
+    'El equipo elige herramientas antes de precisar qué aprendizaje se medirá y qué evidencia permitirá reconocer el logro.',
+    'La rúbrica se entrega después de calificar y se utiliza solo para transformar criterios en un puntaje final.',
+    'Casi todo el curso falla el mismo criterio después de una enseñanza breve y una tarea con instrucciones poco claras.',
+    'Una modalidad alternativa de argumentación solicita marcar opciones, mientras la modalidad escrita exige justificar con evidencia.',
+    'Con consignas segmentadas, la respuesta mejora sin cambiar el contenido, el criterio ni la complejidad del razonamiento.',
+    'La evaluación histórica busca explicar causas y consecuencias; se ofrecen distintas modalidades con criterios comunes.',
+    'Antes de escoger formatos, el equipo aún no define el constructo ni la evidencia mínima que demostrará aprendizaje.',
+    'La rúbrica se conoce solo al final y no se usa para analizar ejemplos, autoevaluar ni mejorar una versión.',
+    'Una respuesta oral demuestra el contenido esperado, pero se penaliza la ausencia de escritura aunque esa modalidad estaba autorizada.',
+    'Durante la enseñanza se producen observaciones, preguntas y trabajos breves, pero solo se considera la prueba final.',
+    'La mayoría falla el mismo criterio, por lo que podría existir un problema común de enseñanza, tarea o comprensión del criterio.',
+    'Una adaptación mejora el puntaje porque incluye pistas que prácticamente revelan la respuesta correcta.',
+    'Las modalidades producen evidencias inconsistentes y difieren en tiempo, apoyo, demanda secundaria y criterios aplicados.'
+  ]};
+  const module5ComplexityLayer={
+    diversifiedDesign:{'Interpretación':'Debe identificarse si cambia el acceso o si se reduce injustificadamente el aprendizaje central.','Aplicación':'La alternativa elimina una barrera irrelevante, conserva criterios comunes y debe favorecer autonomía.','Decisión pedagógica':'La respuesta se incorpora al diseño común o se individualiza según evidencia de participación y progreso.'},
+    explicitTeaching:{'Interpretación':'La secuencia debe conectar modelado, práctica guiada, comprobación y transferencia gradual de responsabilidad.','Aplicación':'La ayuda se ajusta al punto de quiebre y orienta el razonamiento sin sustituir la respuesta.','Decisión pedagógica':'El nivel de andamiaje varía según la evidencia y se retira cuando aumenta la autonomía.'},
+    practiceFeedback:{'Interpretación':'Debe analizarse si la práctica favorece recuperación, discriminación y uso autónomo, no solo desempeño inmediato.','Aplicación':'La retroalimentación vincula criterio, evidencia y una acción que el estudiante puede aplicar en otro intento.','Decisión pedagógica':'La práctica se distribuye, varía y reduce ayudas para favorecer retención y transferencia.'},
+    accessSupports:{'Interpretación':'La utilidad depende de la relación entre barrera, tarea, objetivo y experiencia real de uso.','Aplicación':'El recurso debe enseñarse, comprobarse en contexto y reducir dependencia sin alterar el constructo.','Decisión pedagógica':'Entre alternativas eficaces se priorizan autonomía, participación, preferencia y sostenibilidad.'},
+    diversifiedAssessment:{'Interpretación':'Las modalidades son válidas solo si producen evidencia comparable del mismo aprendizaje.','Aplicación':'Primero se explicita el constructo y luego se seleccionan formatos, criterios y evidencias formativas.','Decisión pedagógica':'La decisión revisa enseñanza y calidad de evidencia antes de atribuir resultados al estudiante.'}
+  };
+  Object.entries(module5CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module5ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+    });
+  });
   const module6Expansions={participationBelonging:[
     ['Comprensión conceptual','¿Qué diferencia participación de presencia física?',['La participación exige asistencia diaria.','La participación implica aportar, decidir, aprender y ser reconocido dentro de la experiencia común.','La presencia siempre garantiza pertenencia.','No existe diferencia.'],1],
     ['Comprensión conceptual','¿Qué caracteriza el sentido de pertenencia escolar?',['Cumplir todas las normas sin apoyo.','Sentirse reconocido, valorado y parte legítima de la comunidad.','Obtener altas calificaciones.','Participar solo en actividades especiales.'],1],
