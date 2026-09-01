@@ -1370,6 +1370,24 @@ document.addEventListener('DOMContentLoaded', () => {
     ['diversifiedDesign','explicitTeaching','practiceFeedback','accessSupports','diversifiedAssessment'],
     ['participationBelonging','coTeaching','collaboration','inclusiveClimate','interdisciplinaryFollowup']
   ];
+  const distractorRationales=[
+    {pattern:/^(solo|únicamente)\b/i,text:' considerando que ese antecedente podría representar el componente principal del desempeño observado.'},
+    {pattern:/^(eliminar|reducir|suspender|retirar|bajar|separar|eximir|obligar|prohibir|cambiar)\b/i,text:' al considerar que así se ajusta la respuesta educativa al desempeño observado en ese momento.'},
+    {pattern:/^(mantener|repetir|continuar|usar|aplicar|entregar|dar|pedir|aumentar)\b/i,text:' para conservar un procedimiento estable y comparar el desempeño en nuevas oportunidades.'},
+    {pattern:/^(concluir|confirmar|diagnosticar|atribuir|declarar)\b/i,text:' porque el patrón observado se considera suficiente para orientar una decisión inmediata.'},
+    {pattern:/^(ignorar|descartar|evitar)\b/i,text:' al estimar que ese antecedente no modifica la interpretación principal del caso.'},
+    {pattern:/^(esperar|posponer)\b/i,text:' hasta contar con una nueva evaluación que confirme la necesidad de modificar la respuesta.'}
+  ];
+  const recalibrateDistractors=question=>{
+    if(question[0]==='Comprensión conceptual')return;
+    question[2]=question[2].map((option,index)=>{
+      if(index===question[3]||option.trim().split(/\s+/).length>=14)return option;
+      const rationale=distractorRationales.find(item=>item.pattern.test(option.trim()));
+      if(!rationale)return option;
+      return `${option.trim().replace(/[.]$/,'')},${rationale.text}`;
+    });
+  };
+  new Set(moduleBanks.flat()).forEach(key=>questionSets[key].forEach(recalibrateDistractors));
   const integrationKeys={integration:0,assessmentIntegration:1,literacyIntegration:2,mathIntegration:3,module5Integration:4,module6Integration:5};
   const shuffle=items=>{const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;};
   const tagged=(questions,label)=>questions.map(q=>[q[0],q[1],q[2],q[3],label]);
