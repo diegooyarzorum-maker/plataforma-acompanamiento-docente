@@ -1277,6 +1277,91 @@ document.addEventListener('DOMContentLoaded', () => {
     ['Decisión pedagógica','Existen interpretaciones profesionales distintas sobre la misma evidencia. ¿Cómo avanzar?',['Imponer la especialidad con mayor jerarquía.','Explicitar hipótesis, acordar qué datos permitirán contrastarlas y revisar conjuntamente.','Promediar opiniones.','Posponer indefinidamente.'],1]
   ]};
   Object.entries(module6Expansions).forEach(([key,questions])=>questionSets[key].push(...questions));
+  const module6CaseContexts={participationBelonging:[
+    'Durante el proyecto del curso, Emilia permanece en la sala, pero recibe una ficha individual y no participa en las decisiones ni en el producto común.',
+    'Un estudiante asiste regularmente y completa tareas adaptadas, aunque sus compañeros no consideran sus aportes ni le asignan funciones relevantes.',
+    'En el trabajo grupal, al alumno que requiere apoyo se le asigna siempre colorear, aun cuando comprende el contenido y desea asumir otras responsabilidades.',
+    'Antonia comunica elecciones mediante imágenes, pero el grupo espera respuestas orales y un adulto termina decidiendo por ella.',
+    'La escuela registra matrícula y asistencia como evidencia de inclusión, sin consultar relaciones, reconocimiento, roles ni experiencia del estudiante.',
+    'Un apoyo académico mejora resultados, pero retira sistemáticamente al estudiante de proyectos, celebraciones y actividades que valora.',
+    'Una estudiante asiste a todas las clases, pero sus compañeros interrumpen sus aportes y no la incluyen en decisiones grupales.',
+    'Un alumno completa una tarea distinta dentro del aula, sin relación con el proyecto ni oportunidades de contribuir al aprendizaje común.',
+    'El grupo distribuye funciones y reserva las tareas más simples para quien requiere apoyo, sin considerar fortalezas ni objetivos.',
+    'La estudiante utiliza imágenes para expresar preferencias, pero su sistema no está disponible durante elecciones y acuerdos del curso.',
+    'Para valorar pertenencia, el equipo dispone de asistencia, calificaciones, perspectivas, relaciones, acceso a roles y participación sostenida.',
+    'En clases participa activamente, pero durante recreos permanece aislado y relata que no encuentra oportunidades seguras de interacción.',
+    'La escuela consulta al alumnado después de tomar las decisiones y no explica si sus opiniones producirán cambios reales.',
+    'El apoyo individual produce progreso, pero separa al estudiante de experiencias comunes en las que desea participar.',
+    'Varios estudiantes intervienen poco cuando la única modalidad es exponer espontáneamente frente al curso completo.',
+    'Un estudiante rechaza una ayuda visible porque sus compañeros la asocian públicamente con su diagnóstico.'
+  ],coTeaching:[
+    'Durante todas las clases, la docente de asignatura enseña al curso y la educadora diferencial se sienta solo con estudiantes PIE.',
+    'Dos profesionales alternan actividades, pero utilizan objetivos, vocabulario y criterios distintos para juzgar el mismo aprendizaje.',
+    'El equipo considera usar estaciones; algunas aportan al objetivo común y otras agrupan permanentemente según diagnóstico.',
+    'Mientras una docente modela, la otra observa respuestas, tipos de ayuda y barreras que luego podrían orientar ajustes conjuntos.',
+    'Una profesional domina el contenido y otra conoce estrategias de acceso, pero actualmente trabajan en secuencias separadas.',
+    'La coenseñanza aumenta la cantidad de adultos en aula, aunque algunos estudiantes siguen sin acceder ni participar en la tarea.',
+    'Durante todo el semestre, un docente expone y el otro acompaña exclusivamente a quienes pertenecen al PIE.',
+    'Los profesionales se turnan frente al curso, pero planifican por separado y aplican criterios de éxito diferentes.',
+    'Se propone enseñanza por estaciones con agrupamientos flexibles y tareas complementarias orientadas al mismo aprendizaje.',
+    'Mientras un docente guía la actividad, el otro registra estrategias, errores y apoyos requeridos por estudiantes diversos.',
+    'Los saberes de contenido y accesibilidad están distribuidos entre ambos profesionales, pero no se integran en una misma secuencia.',
+    'Cada docente entrega comentarios diferentes y no existe lenguaje común sobre criterios ni próximos pasos.',
+    'El equipo utiliza siempre “uno enseña y otro ayuda”, aunque los objetivos y barreras varían entre clases.',
+    'La presencia de ambos profesionales aumentó, pero la tarea y los agrupamientos continúan excluyendo a parte del curso.',
+    'La institución no protege tiempo de planificación; los acuerdos dependen de conversaciones breves en los pasillos.',
+    'Los docentes discrepan sobre cuánta ayuda ofrecer y cada uno interviene de manera distinta durante la misma tarea.'
+  ],inclusiveClimate:[
+    'Compañeros hacen bromas sobre una herramienta de apoyo; después de varios episodios, el estudiante deja de utilizarla aunque le resulta útil.',
+    'Una norma de puntualidad aplica la misma sanción a una estudiante cuya ruta de transporte accesible presenta retrasos documentados.',
+    'Durante una actividad, aparece lenguaje discriminatorio; la respuesta inicial propone solo anotar una sanción sin abordar impacto ni reparación.',
+    'El establecimiento espera denuncias formales, pero no enseña acuerdos de convivencia ni ofrece canales accesibles y confiables de ayuda.',
+    'Una estudiante evita responder porque sus errores provocan risas; conoce el contenido cuando participa en condiciones más seguras.',
+    'Una medida protege temporalmente, pero mantiene al estudiante fuera de clases y actividades evaluadas durante varias semanas.',
+    'Después de bromas reiteradas sobre su apoyo, el estudiante lo guarda y disminuye su participación en las actividades.',
+    'La regla se aplica de manera uniforme, aunque una barrera de transporte accesible afecta de forma documentada solo a algunos estudiantes.',
+    'Un comentario discriminatorio se trata como broma y no se conversa sobre daño, responsabilidad ni formas respetuosas de relación.',
+    'La escuela interviene solo después de conflictos y no construye acuerdos accesibles ni enseña estrategias preventivas.',
+    'Una estudiante teme equivocarse públicamente y permanece en silencio pese a mostrar comprensión en grupos pequeños.',
+    'La consulta sobre convivencia se realiza mediante una encuesta única sin devolución ni oportunidades reales de decisión.',
+    'El mismo conflicto reaparece después de sanciones, pero no se revisan contextos, relaciones, necesidades ni efectos previos.',
+    'La medida de protección reduce el riesgo inmediato, aunque interrumpe aprendizaje, vínculos y participación del estudiante afectado.',
+    'Las burlas aparecen especialmente en una actividad competitiva cuyo diseño refuerza exposición y comparación pública.',
+    'Una regla aparentemente neutral produce exclusión reiterada y las personas afectadas no han sido escuchadas en su revisión.'
+  ],interdisciplinaryFollowup:[
+    'Cada profesional informa avances de su área, pero nadie analiza si las habilidades se utilizan en aula o en otros contextos cotidianos.',
+    'El plan señala “apoyar comprensión” sin línea base, acción, responsable, indicador ni fecha para revisar resultados.',
+    'La reunión dispone de treinta minutos y muchos antecedentes; el equipo necesita priorizar evidencia nueva y una decisión verificable.',
+    'La familia describe una estrategia eficaz en casa, pero el equipo la considera ajena al contexto escolar y no analiza su propósito.',
+    'Un estudiante usa la estrategia en terapia individual, aunque no la selecciona con otras personas, tareas o espacios.',
+    'No hay progreso y las acciones acordadas se aplicaron de manera irregular, con dosis y procedimientos diferentes.',
+    'Los informes muestran avances disciplinares, pero no explican transferencia, autonomía ni efecto sobre participación en aula.',
+    'La meta general no permite comparar desempeño inicial y posterior ni decidir si mantener o modificar el apoyo.',
+    'Para una reunión breve, se deben seleccionar datos recientes, revisar un objetivo y cerrar con responsabilidades y fecha.',
+    'La familia aporta una rutina que funciona, pero todavía no se ha probado una adaptación coordinada ni recogido evidencia.',
+    'El equipo necesita un indicador que demuestre uso autónomo en tareas, personas y contextos diferentes.',
+    'Dos profesionales entregan instrucciones y secuencias contradictorias para el mismo objetivo durante la semana.',
+    'El seguimiento utiliza informes completos en grupos amplios, aunque cada participante requiere solo información pertinente a su rol.',
+    'La implementación fue irregular y el equipo considera cambiar la hipótesis sin corregir primero la fidelidad del plan.',
+    'El estudiante alcanza el objetivo autónomamente en aula, hogar y apoyo individual durante varias mediciones.',
+    'Dos especialidades interpretan de manera diferente los mismos datos y ninguna explicita qué evidencia permitiría contrastar su hipótesis.'
+  ]};
+  const module6ComplexityLayer={
+    participationBelonging:{'Interpretación':'Debe distinguirse presencia física de oportunidades reales para aprender, aportar, decidir y ser reconocido.','Aplicación':'La respuesta incorpora voz, comunicación accesible y roles auténticos dentro de la experiencia común.','Decisión pedagógica':'La medida debe equilibrar progreso, autonomía, participación y pertenencia sin producir estigmatización.'},
+    coTeaching:{'Interpretación':'La presencia de dos profesionales no basta si se fragmentan responsabilidades, objetivos o grupos.','Aplicación':'El diseño articula saberes, roles, criterios y evidencia para ampliar oportunidades del curso completo.','Decisión pedagógica':'La estructura se selecciona según objetivo y barreras, y requiere tiempo institucional de planificación y revisión.'},
+    inclusiveClimate:{'Interpretación':'Debe analizarse el efecto de normas, relaciones, estigma y seguridad sobre la participación.','Aplicación':'La respuesta combina prevención, interrupción del daño, reparación y enseñanza de convivencia.','Decisión pedagógica':'La protección debe resguardar seguridad y continuidad educativa, además de transformar condiciones que reproducen exclusión.'},
+    interdisciplinaryFollowup:{'Interpretación':'El seguimiento integra evidencia funcional y transferencia, no solo informes paralelos de cada especialidad.','Aplicación':'Todo acuerdo necesita prioridad, acción, responsable, indicador, plazo y comunicación pertinente.','Decisión pedagógica':'Antes de juzgar eficacia se revisa fidelidad; luego se ajustan o retiran apoyos según progreso y autonomía.'}
+  };
+  Object.entries(module6CaseContexts).forEach(([key,contexts])=>{
+    let contextIndex=0;
+    questionSets[key].forEach(question=>{
+      if(question[0]==='Comprensión conceptual')return;
+      const position=contextIndex++;
+      const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
+      const complexity=position%2===0?` ${module6ComplexityLayer[key][question[0]]}`:'';
+      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+    });
+  });
   const moduleBanks=[
     ['bio','evolution','inclusion','regulations','decree83'],
     ['assessment','psychoeducational','deaIdentification','supportPlanning','collaboration'],
