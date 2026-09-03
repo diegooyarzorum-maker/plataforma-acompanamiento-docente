@@ -1370,6 +1370,54 @@ document.addEventListener('DOMContentLoaded', () => {
     ['diversifiedDesign','explicitTeaching','practiceFeedback','accessSupports','diversifiedAssessment'],
     ['participationBelonging','coTeaching','collaboration','inclusiveClimate','interdisciplinaryFollowup']
   ];
+  const module1DistractorRefinements=new Map([
+    ['No necesita nuevos desafíos.','Conviene mantener el nivel actual de exigencia mientras se consolida el uso autónomo del apoyo visual.'],
+    ['La dificultad desapareció definitivamente.','El cambio permite concluir que la dificultad se encontraba principalmente en la forma de presentar la actividad.'],
+    ['Las imágenes deben reemplazar toda instrucción oral.','El apoyo visual debería transformarse en la modalidad principal para evitar nuevas dificultades de comprensión.'],
+    ['Una calificación más baja.','Una calificación adicional que permita confirmar si el desempeño se mantiene bajo el criterio esperado.'],
+    ['Confirmar que la dificultad es permanente.','Confirmar la estabilidad de la dificultad antes de revisar las condiciones en que se realizaron las tareas.'],
+    ['Comparar solo con el promedio.','Comparar el resultado con el promedio del curso para establecer la magnitud de la necesidad educativa.'],
+    ['Reducir todos los objetivos.','Priorizar objetivos de menor complejidad mientras la estudiante fortalece la comprensión de instrucciones escritas.'],
+    ['Separarla del trabajo grupal.','Ofrecer inicialmente actividades individuales para controlar las variables que podrían afectar su desempeño.'],
+    ['Concluir que no comprende matemática.','Interpretar el desempeño como una dificultad en el razonamiento matemático que requiere ejercitación simbólica intensiva.'],
+    ['Eliminar los problemas.','Concentrar temporalmente la enseñanza en ejercicios simbólicos aislados antes de retomar la resolución de problemas.'],
+    ['Repetir ejercicios sin cambios.','Mantener el formato simbólico y aumentar la cantidad de ejercicios para favorecer su familiarización progresiva.'],
+    ['No tiene ideas.','Interpretar que la ausencia de intervenciones orales refleja un dominio insuficiente de los contenidos discutidos.'],
+    ['Solo es timidez.','Atribuir la diferencia de desempeño a una característica personal y ofrecer más tiempo para intervenir oralmente.'],
+    ['Evaluar solo oralmente.','Mantener la evaluación oral para fortalecer gradualmente la habilidad que presenta menor nivel de desempeño.'],
+    ['Cambiar todas las metas sin evidencia.','Modificar preventivamente las metas para disminuir las demandas que podrían estar limitando la participación.'],
+    ['Esperar que se adapte sola.','Conservar las condiciones de participación durante un periodo mayor para observar si logra adaptarse de manera independiente.'],
+    ['Mantenerla fuera hasta que alcance el promedio.','Mantener apoyos especializados fuera del aula hasta que su desempeño sea semejante al promedio del curso.'],
+    ['Reducir sus oportunidades de interacción.','Asignar experiencias individuales graduadas antes de incorporarla a las actividades colaborativas del curso.'],
+    ['Aplicar una prueba para justificar la separación.','Aplicar una evaluación estandarizada y usar su resultado como criterio principal para definir el lugar de apoyo.'],
+    ['Retirar a quienes no terminan.','Organizar un espacio paralelo con mayor tiempo para quienes no logran completar la actividad común.'],
+    ['Derivarlos individualmente.','Iniciar evaluaciones individuales para precisar las características que explican la baja participación de cada estudiante.'],
+    ['Reducir el currículo del grupo.','Seleccionar contenidos más simples para disminuir las demandas que están afectando la participación general.'],
+    ['Aplicarla automáticamente por diagnóstico.','Aplicar la adecuación asociada al diagnóstico para asegurar una respuesta oportuna y homogénea.'],
+    ['Esperar una calificación insuficiente.','Mantener la planificación hasta contar con una calificación formal que confirme la necesidad de adecuación.'],
+    ['Crear de inmediato un plan individual para cada estudiante.','Diseñar planes individuales diferenciados antes de modificar las instrucciones ofrecidas al conjunto del curso.'],
+    ['Solicitar diagnóstico antes de modificar la clase.','Recoger antecedentes diagnósticos individuales antes de introducir cambios en una dificultad observada en gran parte del curso.']
+    ,['Que la evaluación oral siempre debe reemplazar la escritura.','Que el contraste justifica privilegiar respuestas orales en las próximas evaluaciones, aunque el objetivo incluya producción escrita.']
+    ,['Que corresponde reducir el objetivo conceptual.','Que la dificultad de transcripción hace necesario disminuir temporalmente la complejidad conceptual del aprendizaje evaluado.']
+    ,['Que no comprendió el concepto.','Que la producción escrita constituye evidencia suficiente para concluir que aún no comprende el concepto trabajado.']
+    ,['Retirar el apoyo para comprobar voluntad.','Disminuir rápidamente el apoyo para determinar si la mediación frecuente está limitando su iniciativa personal.']
+    ,['Cambiar de inmediato todos los objetivos.','Modificar los objetivos que todavía requieren mediación para asegurar experiencias de logro durante el siguiente periodo.']
+    ,['Concluir que el apoyo fracasó.','Considerar que los avances parciales muestran una efectividad insuficiente y reemplazar la estrategia por otra diferente.']
+    ,['Retirar todos los apoyos inmediatamente.','Suspender la pauta durante una tarea equivalente para observar qué pasos logra iniciar sin ayuda externa.']
+    ,['Mantener la ayuda sin cambios.','Conservar la pauta y la mediación actual hasta que complete varias tareas consecutivas sin cometer errores.']
+    ,['Asignar una tarea más fácil sin observar su respuesta.','Reducir la complejidad de la tarea para favorecer la finalización antes de trabajar progresivamente la autonomía.']
+    ,['Volver a consignas extensas para evitar dependencia.','Alternar consignas segmentadas y extensas para comprobar si el curso puede transferir lo aprendido sin apoyos.']
+    ,['Crear un plan individual para todo el curso.','Formalizar apoyos individuales para quienes mejoraron, de modo que la estrategia responda a necesidades identificadas.']
+    ,['El número de organizadores entregados.','La frecuencia con que utilizó el organizador durante las tareas y la cantidad de actividades completadas.']
+    ,['La opinión del proveedor del recurso.','La valoración técnica del recurso y su correspondencia general con la edad y el nivel educativo del estudiante.']
+    ,['Que al estudiante le agrade el color.','La preferencia declarada por el formato y su disposición para utilizarlo en actividades de dificultad semejante.']
+    ,['Debe trabajar únicamente con material concreto.','Conviene mantener el material concreto como apoyo principal hasta que alcance un desempeño estable y preciso.']
+    ,['No posee razonamiento matemático.','La dificultad para operar con símbolos indica un desarrollo insuficiente del razonamiento matemático requerido en la unidad.']
+    ,['La diferencia confirma por sí sola una DEA.','La discrepancia persistente entre representaciones constituye el antecedente principal para confirmar una dificultad específica.']
+  ]);
+  moduleBanks[0].forEach(key=>questionSets[key].forEach(question=>{
+    question[2]=question[2].map((option,index)=>index===question[3]?option:(module1DistractorRefinements.get(option)||option));
+  }));
   const distractorRationales=[
     {pattern:/^(solo|únicamente)\b/i,text:' considerando que ese antecedente podría representar el componente principal del desempeño observado.'},
     {pattern:/^(eliminar|reducir|suspender|retirar|bajar|separar|eximir|obligar|prohibir|cambiar)\b/i,text:' al considerar que así se ajusta la respuesta educativa al desempeño observado en ese momento.'},
@@ -1392,7 +1440,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const shuffle=items=>{const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;};
   const tagged=(questions,label)=>questions.map(q=>[q[0],q[1],q[2],q[3],label]);
   const unitPracticeKeys=new Set(moduleBanks.flat());
-  const unitPracticeDistribution={'Comprensión conceptual':2,'Interpretación':2,'Aplicación':3,'Decisión pedagógica':1};
+  const unitPracticeDistribution={'Comprensión conceptual':1,'Interpretación':2,'Aplicación':3,'Decisión pedagógica':2};
   const unitPracticeBank=key=>Object.entries(unitPracticeDistribution).flatMap(([skill,count])=>shuffle(questionSets[key].filter(question=>question[0]===skill)).slice(0,count));
   const integrationBank=moduleIndex=>moduleBanks[moduleIndex].flatMap((key,unitIndex)=>tagged(shuffle(questionSets[key]).slice(0,3),`Unidad ${unitIndex+1}`));
   const questionWords=question=>question[1].trim().split(/\s+/).length;
@@ -1403,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return shuffle(range.length?range:ordered)[0];
   };
   const taggedQuestion=(question,moduleIndex)=>[question[0],question[1],question[2],question[3],`Módulo ${moduleIndex+1}`];
-  const quickSkillPattern=['Comprensión conceptual','Interpretación','Interpretación','Aplicación','Aplicación','Aplicación','Aplicación','Decisión pedagógica'];
+  const quickSkillPattern=['Comprensión conceptual','Interpretación','Interpretación','Aplicación','Aplicación','Aplicación','Decisión pedagógica','Decisión pedagógica'];
   const quickBank=()=>{
     const modules=shuffle([0,1,2,3,4,5]);
     const moduleSequence=[...modules,...shuffle(modules).slice(0,2)];
@@ -1417,7 +1465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   const miniSkillPatterns=[
-    ['Comprensión conceptual','Interpretación','Aplicación'],
+    ['Interpretación','Aplicación','Decisión pedagógica'],
     ['Interpretación','Aplicación','Decisión pedagógica'],
     ['Comprensión conceptual','Aplicación','Decisión pedagógica']
   ];
@@ -1429,7 +1477,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   const fullExamPatterns=[
-    ['Comprensión conceptual','Aplicación'],
+    ['Interpretación','Aplicación'],
     ['Interpretación','Aplicación'],
     ['Comprensión conceptual','Decisión pedagógica'],
     ['Interpretación','Aplicación'],
