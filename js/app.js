@@ -703,6 +703,38 @@ document.addEventListener('DOMContentLoaded', () => {
     supportPlanning:{'Interpretación':'La revisión debe distinguir actividades realizadas de cambios en aprendizaje, participación o autonomía.','Aplicación':'El plan necesita conectar necesidad, objetivo, estrategia, responsable, indicador y plazo.','Decisión pedagógica':'La medida debe ser viable, favorecer autonomía y revisarse según sus resultados.'},
     collaboration:{'Interpretación':'Debe analizarse cómo se integran perspectivas y se traducen acuerdos en acciones coherentes.','Aplicación':'La respuesta requiere prioridad compartida, aportes complementarios y seguimiento explícito.','Decisión pedagógica':'La decisión debe resguardar participación, confidencialidad y derechos, además de prever la revisión.'}
   };
+  const module2AuthenticCaseLayer={
+    assessment:[
+      'La docente de aula, la educadora diferencial y la psicóloga revisan antecedentes del proceso de evaluación y registros obtenidos durante la enseñanza.',
+      'El informe interdisciplinario consigna una hipótesis diagnóstica, pero el equipo también dispone de producciones, observaciones y respuesta a apoyos.',
+      'En la reunión participan la familia, el estudiante y los profesionales que implementarán las medidas acordadas.',
+      'Antes de cerrar el informe, el equipo contrasta los resultados formales con el desempeño observado por distintos profesionales en situaciones habituales.'
+    ],
+    psychoeducational:[
+      'La educadora diferencial coordina la evaluación con la docente de asignatura y contrasta sus registros con los antecedentes aportados por la psicóloga.',
+      'Aunque existe un diagnóstico previo, los profesionales necesitan precisar los procesos comprometidos y las condiciones que modifican el desempeño.',
+      'Durante la evaluación, cada profesional aporta evidencia vinculada con su ámbito y el equipo debe integrarla para orientar la enseñanza.',
+      'La familia y los docentes describen respuestas diferentes, por lo que la educadora diferencial compara tareas, apoyos y oportunidades de aprendizaje.'
+    ],
+    deaIdentification:[
+      'La docente, la educadora diferencial y la psicóloga analizan si el patrón es persistente y específico antes de sostener una hipótesis de DEA.',
+      'El estudiante cuenta con antecedentes diagnósticos, registros de asistencia y resultados de una intervención cuya implementación también debe evaluarse.',
+      'El equipo interdisciplinario revisa explicaciones pedagógicas, lingüísticas, emocionales y sensoriales que podrían concurrir en el desempeño.',
+      'La familia aporta antecedentes del desarrollo y los profesionales los contrastan con la trayectoria escolar y la respuesta a enseñanza explícita.'
+    ],
+    supportPlanning:[
+      'La docente de aula y la educadora diferencial deben acordar una medida que pueda aplicarse en la actividad común y observarse con el mismo indicador.',
+      'A partir de la evaluación interdisciplinaria, el equipo traduce el diagnóstico y las necesidades descritas en apoyos concretos, responsables y plazos.',
+      'La familia, el estudiante y los profesionales comparan la efectividad del apoyo con su viabilidad y el nivel de autonomía alcanzado.',
+      'En la reunión de seguimiento se presentan registros de aula, sesiones especializadas y uso de la estrategia en otros contextos.'
+    ],
+    collaboration:[
+      'Participan la docente jefe, la educadora diferencial, un profesional asistente de la educación y la familia, cada uno con evidencia obtenida en contextos distintos.',
+      'El diagnóstico forma parte de los antecedentes compartidos, pero el equipo necesita convertirlo en decisiones coordinadas sobre enseñanza y participación.',
+      'El estudiante también comunica cómo experimenta los apoyos propuestos por los distintos profesionales.',
+      'Antes de acordar responsabilidades, el equipo distingue qué información necesita cada rol y qué antecedentes deben mantenerse resguardados.'
+    ]
+  };
   Object.entries(module2CaseContexts).forEach(([key,contexts])=>{
     let contextIndex=0;
     questionSets[key].forEach(question=>{
@@ -710,7 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const position=contextIndex++;
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module2ComplexityLayer[key][question[0]]}`:'';
-      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+      const authenticFrame=position%2===0?`${module2AuthenticCaseLayer[key][position%module2AuthenticCaseLayer[key].length]} `:'';
+      question[1]=`${authenticFrame}${contexts[position]}${complexity} ${centralQuestion}`;
     });
   });
   const module3Expansions={readingProcesses:[
