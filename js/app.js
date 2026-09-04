@@ -743,7 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module2ComplexityLayer[key][question[0]]}`:'';
       const authenticFrame=position%2===0?`${module2AuthenticCaseLayer[key][position%module2AuthenticCaseLayer[key].length]} `:'';
-      question[1]=`${authenticFrame}${contexts[position]}${complexity} ${centralQuestion}`;
+      question[1]=`${authenticFrame}${contexts[position%contexts.length]}${complexity} ${centralQuestion}`;
     });
   });
   const module3Expansions={readingProcesses:[
@@ -913,7 +913,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const position=contextIndex++;
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module3ComplexityLayer[key][question[0]]}`:'';
-      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+      question[1]=`${contexts[position%contexts.length]}${complexity} ${centralQuestion}`;
     });
   });
   const module4Expansions={mathProcesses:[
@@ -1083,7 +1083,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const position=contextIndex++;
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module4ComplexityLayer[key][question[0]]}`:'';
-      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+      question[1]=`${contexts[position%contexts.length]}${complexity} ${centralQuestion}`;
     });
   });
   const module5Expansions={diversifiedDesign:[
@@ -1253,7 +1253,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const position=contextIndex++;
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module5ComplexityLayer[key][question[0]]}`:'';
-      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+      question[1]=`${contexts[position%contexts.length]}${complexity} ${centralQuestion}`;
     });
   });
   const module6Expansions={participationBelonging:[
@@ -1392,9 +1392,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const position=contextIndex++;
       const centralQuestion=question[1].match(/¿[^?]+\?$/)?.[0]||question[1];
       const complexity=position%2===0?` ${module6ComplexityLayer[key][question[0]]}`:'';
-      question[1]=`${contexts[position]}${complexity} ${centralQuestion}`;
+      question[1]=`${contexts[position%contexts.length]}${complexity} ${centralQuestion}`;
     });
   });
+  questionSets.mathProcesses.push(
+    ['Interpretación','Durante una evaluación de cuarto básico, Martina resuelve correctamente 36 + 27 cuando utiliza bloques base diez y explica que debe reunir diez unidades para formar una decena. Al registrar el mismo procedimiento en forma vertical, escribe 513 y no puede relacionar sus marcas con los bloques utilizados. ¿Qué interpretación orienta mejor la evaluación psicopedagógica?',['Presenta una dificultad general de cálculo que impide comprender la adición, aunque la resolución concreta haya sido correcta.','Requiere consolidar la conexión entre agrupación decimal, registro posicional y algoritmo, comparando su desempeño entre representaciones equivalentes.','Necesita automatizar hechos aditivos antes de volver a utilizar material concreto o representaciones pictóricas en actividades de cálculo.','Evidencia un problema de atención sostenida que explica la diferencia entre la manipulación del material y el registro escrito del resultado.'],1],
+    ['Aplicación','En quinto básico, un estudiante con DEA en cálculo obtiene resultados correctos al ejecutar divisiones previamente modeladas, pero ante un problema no distingue si debe repartir una cantidad en grupos iguales o averiguar cuántos grupos caben. El equipo de aula quiere mantener el objetivo curricular y precisar el punto de quiebre. ¿Qué actividad aporta evidencia más útil?',['Presentar varios problemas con números semejantes y pedir que ejecute el algoritmo de división antes de explicar el significado del resultado.','Comparar situaciones de reparto y agrupamiento, representarlas con material o esquemas y justificar qué expresa el cociente en cada una.','Entregar una lista de palabras clave asociadas a la división y registrar cuántas veces selecciona correctamente la operación esperada.','Reducir temporalmente el ámbito numérico y practicar hechos multiplicativos hasta que responda con mayor rapidez y seguridad.'],1]
+  );
+  questionSets.numberSense.push(
+    ['Aplicación','En tercero básico, Joaquín representa 304 con material base diez usando tres placas de centena y cuatro unidades. Sin embargo, al escribir el número registra 34 y afirma que el cero no es necesario porque no hay decenas. La educadora diferencial planifica una intervención breve dentro del aula común. ¿Cuál propuesta responde con mayor precisión a la necesidad observada?',['Practicar la copia de números con cero intermedio y corregir cada omisión hasta que pueda reproducir la escritura convencional sin apoyo.','Vincular agrupaciones, tabla posicional, expresión oral y notación, contrastando números como 304, 340 y 34 y explicando la función del cero.','Trabajar conteo ascendente desde 300 hasta 350 para fortalecer la secuencia numérica antes de retomar la representación de centenas y decenas.','Utilizar exclusivamente bloques base diez durante la unidad para evitar que la notación simbólica interfiera con la comprensión de las cantidades.'],1]
+  );
+  questionSets.calculationOperations.push(
+    ['Interpretación','Al resolver 402 − 185, Camila resta en cada columna el dígito menor del mayor y obtiene 383. En otra tarea estima que el resultado debería estar cerca de 200, pero mantiene su respuesta porque “así funciona la resta vertical”. El equipo analiza tanto el procedimiento como sus conocimientos disponibles. ¿Qué necesidad de apoyo se infiere principalmente?',['Fortalecer la memorización de restas simples para que pueda ejecutar con mayor rapidez el algoritmo convencional en ejercicios equivalentes.','Articular valor posicional, desagrupación y control mediante estimación, haciendo explícito por qué cada transformación conserva la cantidad.','Disminuir el ámbito numérico hasta que no aparezcan ceros en el minuendo y luego aumentar gradualmente la cantidad de ejercicios escritos.','Priorizar el reconocimiento del signo de sustracción, pues la estimación adecuada muestra que comprende completamente las relaciones numéricas implicadas.'],1],
+    ['Aplicación','Un estudiante de sexto básico calcula 198 + 47 mediante el algoritmo convencional, pero comete errores frecuentes al reagrupar. Cuando la profesora le pregunta por otra estrategia, propone 200 + 47 − 2 y obtiene correctamente 245. Para favorecer autonomía y comprensión sin imponer un único procedimiento, ¿qué decisión resulta más pertinente?',['Mantener únicamente la estrategia de compensación, porque el resultado correcto demuestra que el algoritmo convencional ya no necesita ser enseñado.','Comparar ambas estrategias, explicar su equivalencia y permitir que elija una mientras monitorea precisión, eficiencia y posibilidad de comprobar.','Exigir el algoritmo vertical hasta que desaparezcan los errores, porque las estrategias personales dificultan la evaluación común del aprendizaje.','Volver al conteo uno a uno con apoyo concreto, ya que los errores de reagrupación indican que todavía no comprende la adición de números naturales.'],1]
+  );
+  questionSets.problemSolving.push(
+    ['Decisión pedagógica','En una actividad de séptimo básico, Sofía calcula correctamente cuando recibe las operaciones escritas, pero en problemas verbales combina todos los números del enunciado sin considerar la pregunta. Si la docente lee y segmenta el texto, Sofía identifica las relaciones y propone un plan adecuado. El equipo debe decidir el siguiente apoyo y cómo evaluar su efecto. ¿Qué opción es más coherente?',['Entregar siempre los problemas leídos y segmentados, registrando solo si el resultado final coincide con la respuesta esperada.','Enseñar una pauta para reformular la pregunta, representar relaciones y seleccionar datos; retirar gradualmente la mediación y comparar tareas equivalentes.','Aumentar la práctica de operaciones aisladas para automatizar el cálculo antes de volver a presentar situaciones problemáticas escritas.','Reducir permanentemente la extensión de todos los enunciados, pues la diferencia entre modalidades confirma que el problema corresponde solo a lectura.'],1]
+  );
+  questionSets.mathIntervention.push(
+    ['Decisión pedagógica','Durante seis semanas se implementó un apoyo para valor posicional con dos sesiones semanales planificadas. Los registros muestran que solo se realizó la mitad de las sesiones, se cambiaron varias actividades y no se aplicaron tareas comparables de seguimiento. El estudiante mantiene errores al pasar del material concreto a la notación. ¿Qué debe decidir primero el equipo interdisciplinario?',['Concluir que el estudiante no respondió a la intervención y solicitar inmediatamente una nueva evaluación diagnóstica para precisar la dificultad.','Restablecer la fidelidad del apoyo, definir un indicador comparable y recoger progreso antes de decidir si la hipótesis o la estrategia deben cambiar.','Aumentar la complejidad de los números utilizados para determinar si los errores se mantienen en tareas con mayor demanda curricular.','Sustituir el material concreto por práctica simbólica intensiva, porque su uso prolongado podría estar generando dependencia en el estudiante.'],1]
+  );
   const moduleBanks=[
     ['bio','evolution','inclusion','regulations','decree83'],
     ['assessment','psychoeducational','deaIdentification','supportPlanning','collaboration'],
@@ -1477,6 +1494,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitPracticeBank=key=>Object.entries(unitPracticeDistribution).flatMap(([skill,count])=>shuffle(questionSets[key].filter(question=>question[0]===skill)).slice(0,count));
   const integrationBank=moduleIndex=>moduleBanks[moduleIndex].flatMap((key,unitIndex)=>tagged(shuffle(questionSets[key]).slice(0,3),`Unidad ${unitIndex+1}`));
   const questionWords=question=>question[1].trim().split(/\s+/).length;
+  const optionWords=option=>option.trim().split(/\s+/).length;
+  const isSimulationCase=question=>{
+    if(question[0]==='Comprensión conceptual'||questionWords(question)<45)return false;
+    const lengths=question[2].map(optionWords);
+    return Math.min(...lengths)>=7&&Math.max(...lengths)-Math.min(...lengths)<=18;
+  };
+  const hasComparableOptions=question=>{
+    const lengths=question[2].map(optionWords);
+    return Math.min(...lengths)>=4&&Math.max(...lengths)-Math.min(...lengths)<=18;
+  };
+  const isAppliedFallback=question=>question[0]!=='Comprensión conceptual'&&questionWords(question)>=30&&hasComparableOptions(question);
+  const simulationPool=keys=>{
+    const strict=keys.flatMap(key=>questionSets[key].filter(isSimulationCase));
+    const used=new Set(strict.map(question=>question[1]));
+    const fallback=keys.flatMap(key=>questionSets[key].filter(question=>isAppliedFallback(question)&&!used.has(question[1])));
+    return [...strict,...fallback];
+  };
+  const previousSimulationPrompts={mini:new Set(),full:new Set()};
+  const selectFresh=(pool,count,previous)=>{
+    const fresh=shuffle(pool.filter(question=>!previous.has(question[1])));
+    const remaining=shuffle(pool.filter(question=>previous.has(question[1])));
+    return [...fresh,...remaining].slice(0,count);
+  };
   const variedCandidate=(candidates,preferUpper=false)=>{
     const ordered=shuffle(candidates).sort((a,b)=>questionWords(a)-questionWords(b));
     const midpoint=Math.max(1,Math.ceil(ordered.length/2));
@@ -1497,32 +1537,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return taggedQuestion(selected,moduleIndex);
     });
   };
-  const miniSkillPatterns=[
-    ['Interpretación','Aplicación','Decisión pedagógica'],
-    ['Interpretación','Aplicación','Decisión pedagógica'],
-    ['Comprensión conceptual','Aplicación','Decisión pedagógica']
-  ];
-  const miniBank=()=>moduleBanks.flatMap((keys,moduleIndex)=>{
-    const units=shuffle(keys);
-    return miniSkillPatterns[moduleIndex%miniSkillPatterns.length].map((skill,index)=>{
-      const candidates=questionSets[units[index]].filter(question=>question[0]===skill);
-      return taggedQuestion(variedCandidate(candidates,index%2===1),moduleIndex);
-    });
-  });
-  const fullExamPatterns=[
-    ['Interpretación','Aplicación'],
-    ['Interpretación','Aplicación'],
-    ['Comprensión conceptual','Decisión pedagógica'],
-    ['Interpretación','Aplicación'],
-    ['Aplicación','Decisión pedagógica']
-  ];
-  const fullExamBank=()=>moduleBanks.flatMap((keys,moduleIndex)=>{
-    const patterns=shuffle(fullExamPatterns);
-    return keys.flatMap((key,unitIndex)=>patterns[unitIndex].map((skill,skillIndex)=>{
-      const candidates=questionSets[key].filter(question=>question[0]===skill);
-      return taggedQuestion(variedCandidate(candidates,(unitIndex+skillIndex)%2===1),moduleIndex);
-    }));
-  });
+  const balancedSimulationSelection=(keys,count,previous)=>{
+    const selected=[];
+    const selectedPrompts=new Set();
+    const byUnit=shuffle(keys).map(key=>selectFresh(questionSets[key].filter(isSimulationCase),1,previous)[0]).filter(Boolean);
+    byUnit.forEach(question=>{selected.push(question);selectedPrompts.add(question[1]);});
+    const pool=simulationPool(keys).filter(question=>!selectedPrompts.has(question[1]));
+    selectFresh(pool,Math.max(0,count-selected.length),previous).forEach(question=>selected.push(question));
+    return selected.slice(0,count);
+  };
+  const simulationBank=(countPerModule,historyKey)=>{
+    const previous=previousSimulationPrompts[historyKey];
+    const result=moduleBanks.flatMap((keys,moduleIndex)=>balancedSimulationSelection(keys,countPerModule,previous).map(question=>taggedQuestion(question,moduleIndex)));
+    previousSimulationPrompts[historyKey]=new Set(result.map(question=>question[1]));
+    return result;
+  };
+  const miniBank=()=>simulationBank(3,'mini');
+  const fullExamBank=()=>simulationBank(10,'full');
   const dynamicQuestions=key=>{
     if(key in integrationKeys)return integrationBank(integrationKeys[key]);
     if(key==='transversalQuick')return quickBank();
@@ -1531,7 +1562,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(unitPracticeKeys.has(key))return unitPracticeBank(key);
     return questionSets[key];
   };
-  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo · casos variados'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · matriz equilibrada · tiempo sugerido: 120 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
+  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo · selección de casos aplicados'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · casos y decisiones pedagógicas · tiempo sugerido: 150 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
   const quizKey=quiz.dataset.quiz||'bio';
   let questions=[];
   const letters=['A','B','C','D'];
