@@ -1420,6 +1420,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ['diversifiedDesign','explicitTeaching','practiceFeedback','accessSupports','diversifiedAssessment'],
     ['participationBelonging','coTeaching','collaboration','inclusiveClimate','interdisciplinaryFollowup']
   ];
+  const dedicatedSimulationBanks=globalThis.ecepSimulationBanks||{};
   const module1DistractorRefinements=new Map([
     ['No necesita nuevos desafíos.','Conviene mantener el nivel actual de exigencia mientras se consolida el uso autónomo del apoyo visual.'],
     ['La dificultad desapareció definitivamente.','El cambio permite concluir que la dificultad se encontraba principalmente en la forma de presentar la actividad.'],
@@ -1505,11 +1506,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.min(...lengths)>=4&&Math.max(...lengths)-Math.min(...lengths)<=18;
   };
   const isAppliedFallback=question=>question[0]!=='Comprensión conceptual'&&questionWords(question)>=30&&hasComparableOptions(question);
-  const simulationPool=keys=>{
+  const simulationPool=(keys,moduleIndex)=>{
+    const dedicated=dedicatedSimulationBanks[moduleIndex]||[];
     const strict=keys.flatMap(key=>questionSets[key].filter(isSimulationCase));
-    const used=new Set(strict.map(question=>question[1]));
+    const used=new Set([...dedicated,...strict].map(question=>question[1]));
     const fallback=keys.flatMap(key=>questionSets[key].filter(question=>isAppliedFallback(question)&&!used.has(question[1])));
-    return [...strict,...fallback];
+    return [...dedicated,...strict,...fallback];
   };
   const previousSimulationPrompts={mini:new Set(),full:new Set()};
   const selectFresh=(pool,count,previous)=>{
@@ -1537,18 +1539,24 @@ document.addEventListener('DOMContentLoaded', () => {
       return taggedQuestion(selected,moduleIndex);
     });
   };
-  const balancedSimulationSelection=(keys,count,previous)=>{
+  const balancedSimulationSelection=(keys,moduleIndex,count,previous,usedThisAttempt)=>{
     const selected=[];
     const selectedPrompts=new Set();
-    const byUnit=shuffle(keys).map(key=>selectFresh(questionSets[key].filter(isSimulationCase),1,previous)[0]).filter(Boolean);
-    byUnit.forEach(question=>{selected.push(question);selectedPrompts.add(question[1]);});
-    const pool=simulationPool(keys).filter(question=>!selectedPrompts.has(question[1]));
+    const availableDedicated=(dedicatedSimulationBanks[moduleIndex]||[]).filter(question=>!usedThisAttempt.has(question[1]));
+    const dedicated=selectFresh(availableDedicated,count,previous);
+    dedicated.forEach(question=>{selected.push(question);selectedPrompts.add(question[1]);});
+    const byUnit=shuffle(keys).map(key=>selectFresh(questionSets[key].filter(question=>isSimulationCase(question)&&!usedThisAttempt.has(question[1])),1,previous)[0]).filter(Boolean);
+    byUnit.forEach(question=>{if(selected.length<count&&!selectedPrompts.has(question[1])){selected.push(question);selectedPrompts.add(question[1]);}});
+    const pool=simulationPool(keys,moduleIndex).filter(question=>!selectedPrompts.has(question[1])&&!usedThisAttempt.has(question[1]));
     selectFresh(pool,Math.max(0,count-selected.length),previous).forEach(question=>selected.push(question));
+    selected.forEach(question=>usedThisAttempt.add(question[1]));
     return selected.slice(0,count);
   };
   const simulationBank=(countPerModule,historyKey)=>{
     const previous=previousSimulationPrompts[historyKey];
-    const result=moduleBanks.flatMap((keys,moduleIndex)=>balancedSimulationSelection(keys,countPerModule,previous).map(question=>taggedQuestion(question,moduleIndex)));
+    const usedThisAttempt=new Set();
+    const selectionOrder=[0,5,1,2,3,4];
+    const result=selectionOrder.flatMap(moduleIndex=>balancedSimulationSelection(moduleBanks[moduleIndex],moduleIndex,countPerModule,previous,usedThisAttempt).map(question=>taggedQuestion(question,moduleIndex)));
     previousSimulationPrompts[historyKey]=new Set(result.map(question=>question[1]));
     return result;
   };
