@@ -1513,31 +1513,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const fallback=keys.flatMap(key=>questionSets[key].filter(question=>isAppliedFallback(question)&&!used.has(question[1])));
     return [...dedicated,...strict,...fallback];
   };
-  const previousSimulationPrompts={mini:new Set(),full:new Set()};
+  const previousSimulationPrompts={quick:new Set(),mini:new Set(),full:new Set()};
   const selectFresh=(pool,count,previous)=>{
     const fresh=shuffle(pool.filter(question=>!previous.has(question[1])));
     const remaining=shuffle(pool.filter(question=>previous.has(question[1])));
     return [...fresh,...remaining].slice(0,count);
   };
-  const variedCandidate=(candidates,preferUpper=false)=>{
-    const ordered=shuffle(candidates).sort((a,b)=>questionWords(a)-questionWords(b));
-    const midpoint=Math.max(1,Math.ceil(ordered.length/2));
-    const range=preferUpper?ordered.slice(midpoint):ordered.slice(0,midpoint);
-    return shuffle(range.length?range:ordered)[0];
-  };
   const taggedQuestion=(question,moduleIndex)=>[question[0],question[1],question[2],question[3],`Módulo ${moduleIndex+1}`];
-  const quickSkillPattern=['Comprensión conceptual','Interpretación','Interpretación','Aplicación','Aplicación','Aplicación','Decisión pedagógica','Decisión pedagógica'];
+  const quickSkillPattern=['Interpretación','Interpretación','Interpretación','Aplicación','Aplicación','Aplicación','Decisión pedagógica','Decisión pedagógica'];
   const quickBank=()=>{
+    const previous=previousSimulationPrompts.quick;
     const modules=shuffle([0,1,2,3,4,5]);
     const moduleSequence=[...modules,...shuffle(modules).slice(0,2)];
-    const used=new Set();
-    return shuffle(quickSkillPattern).map((skill,index)=>{
+    const usedPrompts=new Set();
+    const skillSequence=shuffle(quickSkillPattern);
+    const result=skillSequence.map((skill,index)=>{
       const moduleIndex=moduleSequence[index];
-      const candidates=moduleBanks[moduleIndex].flatMap(key=>questionSets[key]).filter(question=>question[0]===skill&&!used.has(question[1]));
-      const selected=variedCandidate(candidates,index%2===1);
-      used.add(selected[1]);
+      const dedicated=(dedicatedSimulationBanks[moduleIndex]||[]).filter(question=>question[0]===skill&&!usedPrompts.has(question[1]));
+      const fallback=simulationPool(moduleBanks[moduleIndex],moduleIndex).filter(question=>question[0]===skill&&!usedPrompts.has(question[1]));
+      const selected=selectFresh(dedicated.length?dedicated:fallback,1,previous)[0];
+      usedPrompts.add(selected[1]);
       return taggedQuestion(selected,moduleIndex);
     });
+    previousSimulationPrompts.quick=new Set(result.map(question=>question[1]));
+    return result;
   };
   const balancedSimulationSelection=(keys,moduleIndex,count,previous,usedThisAttempt)=>{
     const selected=[];
@@ -1570,7 +1569,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(unitPracticeKeys.has(key))return unitPracticeBank(key);
     return questionSets[key];
   };
-  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo · selección de casos aplicados'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · casos y decisiones pedagógicas · tiempo sugerido: 150 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · habilidades equilibradas'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
+  if(quiz.dataset.quiz==='transversal'){const mode=new URLSearchParams(location.search).get('modo')||'rapida';const config={rapida:['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · casos aplicados y habilidades equilibradas'],mini:['transversalMini','Miniensayo transversal','18 preguntas · 3 por módulo · selección de casos aplicados'],completo:['transversalFull','Ensayo completo','60 preguntas · 10 por módulo · casos y decisiones pedagógicas · tiempo sugerido: 150 minutos']}[mode]||['transversalQuick','Práctica rápida','8 preguntas · 6 módulos · casos aplicados y habilidades equilibradas'];quiz.dataset.quiz=config[0];document.querySelector('[data-practice-title]').textContent=config[1];document.querySelector('[data-practice-meta]').textContent=config[2];document.querySelector(`.practice-mode-nav a[href="?modo=${mode}"]`)?.setAttribute('aria-current','page');document.title=`${config[1]} | ECEP`;}
   const quizKey=quiz.dataset.quiz||'bio';
   let questions=[];
   const letters=['A','B','C','D'];
